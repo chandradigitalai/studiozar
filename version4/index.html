@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<title>StudioZar — Website Building & Canva Content Creation</title>
+<meta name="description" content="Professional website building and Canva content creation services. We Build. You Grow." />
+<link rel="icon" type="image/png" href="images/logo2.png" />
+<link rel="canonical" href="https://studiozar.in/" />
+<meta property="og:title" content="StudioZar — Website Building &amp; Canva Content Creation" />
+<meta property="og:description" content="Professional website building and Canva content creation services. Custom websites from ₹5,000. We Create. You Grow." />
+<meta property="og:image" content="images/logo2.png" />
+<meta property="og:url" content="https://studiozar.in/" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="StudioZar — Website Building &amp; Canva Content Creation" />
+<meta name="twitter:description" content="Professional website building and Canva content creation services. Custom websites from ₹5,000. We Create. You Grow." />
+<meta name="twitter:image" content="images/logo2.png" />
+<meta name="keywords" content="website building, canva content, web design, tirupati, website development, studio zar, freelance web designer, indian web developer" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"StudioZar","description":"Website building and Canva content creation services. Custom-coded, mobile-responsive websites at honest prices.","url":"https://studiozar.in/","telephone":"+917989950973","email":"chandradigitalai@gmail.com","address":{"@type":"PostalAddress","streetAddress":"4-1-106, Patnool Street","addressLocality":"Tirupati","addressRegion":"Andhra Pradesh","addressCountry":"IN"},"founder":{"@type":"Person","name":"Chandra Nandipati"},"priceRange":"₹1,500 – ₹25,000"}</script>
+<style>
+*,:before,:after{margin:0;padding:0;box-sizing:border-box}
+:root{--background:#0f0f0f;--foreground:#f8f8f8;--card:#1a1a1a;--card-foreground:#f8f8f8;--popover:#1a1a1a;--popover-foreground:#f8f8f8;--primary:#f8f8f8;--primary-foreground:#0f0f0f;--secondary:#292929;--secondary-foreground:#f8f8f8;--muted:#242424;--muted-foreground:#a0a0a0;--accent:#ff6b00;--accent-foreground:#0f0f0f;--destructive:#ef4444;--border:#ffffff17;--input:#ffffff24;--ring:#ff6b00;--line:#ffffff0f;--font-display:'Space Grotesk',sans-serif;--font-body:'Inter',sans-serif;--font-mono:'Space Grotesk',monospace}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--background);color:var(--foreground);line-height:1.6;-webkit-font-smoothing:antialiased}
+::selection{background:rgba(59,130,246,.3);color:#fff}
+::-webkit-scrollbar{width:0;height:0}
+.container{max-width:1200px;margin:0 auto;padding:0 1.5rem}
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(15,15,15,0.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:.5rem 1.5rem}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;min-height:5.5rem;max-width:1200px;margin:0 auto}
+.nav-left{display:flex;align-items:center;gap:.8rem}
+.nav-left img{height:5rem;width:auto;border-radius:10px}
+.nav-brand{font-family:var(--font-display);font-weight:700;font-size:1.4rem;line-height:1.1;letter-spacing:-.02em}
+.nav-brand .s-blue{color:#3B82F6}
+.nav-brand .z-orange{color:#ff6b00}
+.nav-tagline{font-size:.8rem;color:#fff;letter-spacing:.08em;margin-top:.15rem}
+.nav-tagline .sep{color:#3B82F6;margin:0 .45rem}
+.nav-right{display:flex;align-items:center;gap:1.2rem}
+.nav-right a{font-size:.78rem;font-weight:500;color:var(--muted-foreground);transition:color .2s;letter-spacing:.02em;position:relative;text-decoration:none}
+.nav-right a:hover{color:var(--foreground)}
+.nav-right a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1px;background:#3B82F6;transition:width .3s}
+.nav-right a:hover::after{width:100%}
+.nav-btn{font-family:var(--font-mono);font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:.45rem 1.1rem;border-radius:999px;background:transparent;color:#3B82F6;border:1.5px solid #ff6b00;cursor:pointer;transition:all .25s;text-decoration:none}
+.nav-btn:hover{background:rgba(255,107,0,.08);transform:translateY(-1px)}
+.mob-toggle{display:none;flex-direction:column;gap:4px;cursor:pointer;background:none;border:none;padding:4px}
+.mob-toggle span{display:block;width:20px;height:1.5px;background:var(--foreground);transition:.3s;border-radius:1px}
+.mob-toggle.active span:nth-child(1){transform:rotate(45deg)translate(4px,4px)}
+.mob-toggle.active span:nth-child(2){opacity:0}
+.mob-toggle.active span:nth-child(3){transform:rotate(-45deg)translate(4px,-4px)}
+@media(max-width:48rem){.nav-right a:not(.nav-btn){display:none}.mob-toggle{display:flex}.nav-right.open a:not(.nav-btn){display:block}.nav-right.open{position:absolute;top:100%;left:0;right:0;background:var(--card);flex-direction:column;padding:1.2rem 1.5rem;border-bottom:1px solid var(--border);gap:.8rem;box-shadow:0 20px 60px rgba(0,0,0,.5)}}
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding-top:3.5rem}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(59,130,246,.12) 0%,transparent 50%),radial-gradient(ellipse at 70% 50%,rgba(255,107,0,.06) 0%,transparent 50%),radial-gradient(ellipse at 50% 0%,rgba(59,130,246,.08) 0%,transparent 60%);z-index:0}
+.hero-grid{position:absolute;inset:0;z-index:0;background-image:linear-gradient(to right,var(--line) 1px,transparent 1px),linear-gradient(to bottom,var(--line) 1px,transparent 1px);background-size:clamp(48px,8vw,110px) clamp(48px,8vw,110px)}
+.hero-content{position:relative;z-index:2;width:100%;padding:3rem 0}
+.hero-strip{display:flex;gap:.3rem;flex-wrap:wrap;margin-bottom:2rem}
+.hero-strip a{font-family:var(--font-mono);font-size:clamp(.6rem,1.5vw,.75rem);font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#3B82F6;text-shadow:0 0 10px rgba(59,130,246,.3);padding:.25rem .75rem;border-radius:999px;border:1px solid rgba(59,130,246,.2);transition:all .2s;text-decoration:none}
+.hero-strip a:hover{background:rgba(59,130,246,.1);color:#ff6b00;border-color:rgba(255,107,0,.2)}
+.hero .text-mega{font-family:var(--font-display);letter-spacing:-.04em;font-size:clamp(2.5rem,14vw,12rem);font-weight:700;line-height:.86;color:#ff6b00;display:block}
+.hero .text-mega-outline{font-family:var(--font-display);letter-spacing:-.04em;font-size:clamp(2.5rem,14vw,12rem);font-weight:700;line-height:.86;color:transparent;-webkit-text-stroke:2px #3B82F6;display:block}
+.hero-tagline{font-family:var(--font-display);font-size:clamp(1.5rem,6vw,4.5rem);font-weight:600;line-height:.92;letter-spacing:-.03em;margin-top:.5rem;color:#3B82F6}
+.hero-desc{color:var(--muted-foreground);max-width:500px;margin-top:1.5rem;font-size:.9rem;line-height:1.7}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem}
+.scroll-indicator{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);z-index:2}
+.scroll-indicator span{display:block;width:1px;height:2.5rem;background:#3B82F6;margin:0 auto;animation:scrollPulse 2s ease infinite}
+@keyframes scrollPulse{0%{opacity:1;transform:scaleY(1)}50%{opacity:.3;transform:scaleY(.5)}100%{opacity:1;transform:scaleY(1)}}
+/* LABELS & SECTIONS */
+.section-pad{padding:5rem 0}
+@media(min-width:48rem){.section-pad{padding:6rem 0}}
+.section-label{font-family:var(--font-mono);font-size:clamp(.7rem,2.5vw,1.1rem);letter-spacing:clamp(.12em,1vw,.28em);text-transform:uppercase;color:#3B82F6;text-shadow:0 0 10px rgba(59,130,246,.3);display:inline-flex;align-items:center;gap:clamp(.5rem,2vw,1rem);margin-bottom:2rem}
+.section-label:before{content:'';background:#3B82F6;border-radius:50%;flex-shrink:0;width:.35rem;height:.35rem;display:block;box-shadow:0 0 10px rgba(59,130,246,.5)}
+.section-head{font-family:var(--font-display);font-size:clamp(1.75rem,8vw,6rem);font-weight:600;line-height:.92;letter-spacing:-.03em;margin-bottom:1rem;color:#3B82F6}
+.section-head .text-outline{color:transparent;-webkit-text-stroke:2px #ff6b00}
+.section-desc{color:var(--muted-foreground);max-width:540px;font-size:.9rem;line-height:1.7;margin-bottom:3rem}
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.65rem 1.5rem;border-radius:999px;font-weight:600;font-size:.8rem;transition:all .25s;border:1.5px solid #ff6b00;cursor:pointer;font-family:var(--font-body);text-decoration:none;background:transparent;color:#3B82F6}
+.btn:hover{background:rgba(255,107,0,.08);transform:translateY(-1px)}
+/* SERVICES ROW */
+.services-row{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;overflow:hidden;border:1px solid var(--border);background:var(--border)}
+@media(max-width:40rem){.services-row{grid-template-columns:1fr}}
+.srv-card{background:var(--card);padding:2.5rem 2rem;transition:all .35s ease;position:relative;border:1.5px solid transparent}
+.srv-card:hover{border-color:#ff6b00}
+.srv-num{font-family:var(--font-mono);font-size:.65rem;letter-spacing:.08em;color:#3B82F6;margin-bottom:.75rem;display:inline-block}
+.srv-card h3{font-family:var(--font-display);font-size:1.1rem;margin-bottom:.5rem}
+.srv-card p{color:var(--muted-foreground);font-size:.82rem;line-height:1.6}
+.srv-card .btn-link{font-family:var(--font-mono);font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;color:#3B82F6;text-decoration:none;margin-top:1rem;display:inline-flex;align-items:center;gap:.4rem;transition:all .2s;padding:.35rem .8rem;border:1.5px solid #ff6b00;border-radius:999px;background:transparent}
+.srv-card .btn-link:hover{gap:.7rem;background:rgba(255,107,0,.08)}
+.srv-tag{font-size:.7rem;padding:.2rem .6rem;border-radius:999px;background:rgba(255,107,0,.08);color:var(--accent);border:1px solid rgba(255,107,0,.12)}
+/* ADVANTAGE GRID */
+.adv-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;overflow:hidden;border:1px solid var(--border);background:var(--border)}
+@media(max-width:64rem){.adv-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:40rem){.adv-grid{grid-template-columns:1fr}}
+.adv-item{background:var(--card);padding:2rem 1.5rem;text-align:center;transition:all .35s ease;border:1.5px solid transparent}
+.adv-item:hover{border-color:#ff6b00}
+.adv-item .anum{font-family:var(--font-mono);font-size:.6rem;letter-spacing:.12em;color:#3B82F6;margin-bottom:.75rem;display:inline-block;padding:.2rem .6rem;border:1px solid rgba(59,130,246,.2);border-radius:999px}
+.adv-item .aicon{font-size:1.5rem;margin-bottom:.5rem}
+.adv-item h3{font-family:var(--font-display);font-size:.9rem;margin-bottom:.25rem}
+.adv-item p{color:var(--muted-foreground);font-size:.75rem;line-height:1.5}
+.adv-item .aval{font-family:var(--font-display);font-size:1.2rem;font-weight:700;color:var(--accent);margin-top:.35rem}
+/* PROCESS */
+.process-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;overflow:hidden;border:1px solid var(--border);background:var(--border)}
+@media(max-width:64rem){.process-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:40rem){.process-grid{grid-template-columns:1fr}}
+.proc-step{background:var(--card);padding:2rem 1.5rem;transition:all .35s ease;border:1.5px solid transparent}
+.proc-step:hover{border-color:#ff6b00}
+.proc-step .snum{font-family:var(--font-mono);font-size:.6rem;letter-spacing:.12em;color:#3B82F6;margin-bottom:.25rem}
+.proc-step h3{font-family:var(--font-display);font-size:.95rem;margin-bottom:.25rem}
+.proc-step p{color:var(--muted-foreground);font-size:.78rem;line-height:1.5}
+/* OFFER BANNER */
+.offer-banner{background:linear-gradient(135deg,rgba(59,130,246,.08) 0%,rgba(255,107,0,.03) 100%);border:1px solid rgba(59,130,246,.12);padding:3rem;position:relative;overflow:hidden}
+.offer-banner .offer-grid{position:absolute;inset:0;background-image:linear-gradient(to right,var(--line) 1px,transparent 1px),linear-gradient(to bottom,var(--line) 1px,transparent 1px);background-size:48px 48px;z-index:0}
+.offer-banner .content{position:relative;z-index:2}
+.offer-banner .badge{font-family:var(--font-mono);font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:#3B82F6;display:inline-flex;align-items:center;gap:.4rem;margin-bottom:1rem}
+.offer-banner .badge:before{content:'';width:.35rem;height:.35rem;border-radius:50%;background:#3B82F6;display:block;box-shadow:0 0 10px rgba(59,130,246,.5)}
+.offer-banner h2{font-family:var(--font-display);font-size:clamp(1.5rem,4vw,3rem);margin-bottom:.35rem}
+.offer-banner .price{font-family:var(--font-display);font-size:clamp(2rem,5vw,4rem);font-weight:700;color:#ff6b00;margin:.5rem 0;letter-spacing:-.03em}
+.offer-banner .note{font-size:.78rem;color:var(--muted-foreground);margin-bottom:1.5rem}
+.offer-banner .offer-ctas{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+.offer-feat-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;overflow:hidden;border:1px solid rgba(59,130,246,.12);background:rgba(59,130,246,.04);margin-bottom:2rem;max-width:700px}
+@media(max-width:48rem){.offer-feat-grid{grid-template-columns:repeat(3,1fr)}}
+.offer-feat{padding:1.25rem 1rem;text-align:center;background:rgba(59,130,246,.02)}
+.offer-feat .of-label{font-family:var(--font-mono);font-size:.55rem;letter-spacing:.1em;color:#3B82F6;margin-bottom:.25rem}
+.offer-feat h4{font-size:.8rem;margin-bottom:.1rem}
+.offer-feat p{font-size:.7rem;color:var(--muted-foreground)}
+/* PRICING GRID */
+.pkg-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;overflow:hidden;border:1px solid var(--border);background:var(--border);max-width:700px}
+@media(max-width:40rem){.pkg-grid{grid-template-columns:1fr}}
+.pkg-item{background:var(--card);padding:2rem;transition:all .35s ease;border:1.5px solid transparent}
+.pkg-item:hover{border-color:#ff6b00}
+.pkg-item h4{font-family:var(--font-display);font-size:clamp(1.2rem,3vw,2rem);margin-bottom:.25rem;display:flex;align-items:center;gap:.75rem}
+.pkg-item p{color:var(--muted-foreground);font-size:.8rem;line-height:1.6}
+.pkg-item .pkg-label{font-family:var(--font-mono);font-size:.6rem;letter-spacing:.08em;color:#3B82F6;margin-bottom:.5rem}
+.pkg-item ul{list-style:none;margin-top:.75rem}
+.pkg-item ul li{font-size:.78rem;color:var(--foreground);padding:.35rem 0;display:flex;align-items:center;gap:.5rem}
+.pkg-item ul li:before{content:'\2713';color:var(--accent);font-weight:700}
+/* DETAILED SERVICE CARDS */
+.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+@media(max-width:64rem){.svc-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:40rem){.svc-grid{grid-template-columns:1fr}}
+.svc-card-det{background:var(--card);border:1px solid var(--border);padding:2.5rem;transition:all .35s ease;display:flex;flex-direction:column;cursor:default;border-radius:10px}
+.svc-card-det:hover{border-color:#ff6b00}
+.svc-card-det:hover .arrow{transform:translateX(4px)}
+.svc-num-det{font-family:var(--font-mono);font-size:.6rem;letter-spacing:.08em;color:#3B82F6;margin-bottom:.75rem}
+.svc-card-det h3{font-family:var(--font-display);font-size:1.35rem;margin-bottom:.5rem}
+.svc-price-det{font-family:var(--font-display);font-size:2rem;font-weight:700;color:var(--foreground);margin:.5rem 0}
+.svc-price-det span{font-size:.85rem;font-weight:400;color:var(--muted-foreground)}
+.svc-sub-det{color:var(--muted-foreground);font-size:.78rem;line-height:1.5;margin-bottom:1.25rem}
+.svc-card-det ul{list-style:none;margin-top:.5rem;flex:1}
+.svc-card-det ul li{font-size:.82rem;color:var(--foreground);padding:.35rem 0;display:flex;align-items:center;gap:.5rem}
+.svc-card-det ul li:before{content:'\2713';color:var(--accent);font-weight:700}
+.svc-addon-det{font-size:.72rem;color:var(--muted-foreground);margin-top:.75rem;padding:.5rem .75rem;border:1px solid var(--border);border-radius:8px;line-height:1.4}
+.svc-card-det .btn{margin-top:1.25rem;align-self:flex-start}
+.arrow{display:inline-block;transition:transform .3s}
+/* MAINTENANCE GRID */
+.mtn-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+@media(max-width:56rem){.mtn-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:36rem){.mtn-grid{grid-template-columns:1fr}}
+.mtn-card{background:var(--card);border:1px solid var(--border);padding:2rem;transition:all .35s ease;display:flex;flex-direction:column;align-items:center;text-align:center;cursor:default;border-radius:10px}
+.mtn-card:hover{border-color:#ff6b00}
+.mtn-label{font-family:var(--font-mono);font-size:.6rem;letter-spacing:.08em;color:#3B82F6;margin-bottom:.5rem}
+.mtn-card h4{font-family:var(--font-display);font-size:1.15rem;margin-bottom:.25rem}
+.mtn-card .svc-price-det{font-size:1.6rem}
+.mtn-card ul{list-style:none;margin-top:.75rem;text-align:left;width:100%;flex:1}
+.mtn-card ul li{font-size:.8rem;color:var(--foreground);padding:.3rem 0;display:flex;align-items:center;gap:.5rem}
+.mtn-card ul li:before{content:'\2713';color:var(--accent);font-weight:700}
+.mtn-card .btn{margin-top:1rem}
+/* CONTACT GRID */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;overflow:hidden;border:1px solid var(--border);background:var(--border);margin-bottom:2rem}
+@media(max-width:48rem){.contact-grid{grid-template-columns:1fr}}
+.contact-info{background:var(--card);padding:2.5rem}
+.contact-info h3{font-family:var(--font-display);font-size:1.1rem;margin-bottom:.25rem}
+.contact-info p{color:var(--muted-foreground);font-size:.82rem;margin-bottom:.25rem}
+.ci-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2rem}
+.ci-label{font-family:var(--font-mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:#3B82F6;margin-bottom:.35rem}
+.ci-value{font-size:.85rem}
+.ci-value a{color:var(--foreground);text-decoration:none}
+.ci-value a:hover{color:#3B82F6}
+.contact-form{background:var(--card);padding:2.5rem}
+.cf-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
+@media(max-width:36rem){.cf-row{grid-template-columns:1fr}}
+.cf-field{margin-bottom:.5rem}
+.cf-field label{display:block;font-size:.75rem;font-weight:600;margin-bottom:.35rem;color:var(--foreground)}
+.cf-field input,.cf-field textarea{width:100%;padding:.6rem .8rem;border:1px solid var(--input);border-radius:8px;font-size:.82rem;background:var(--background);color:var(--foreground);outline:none;font-family:var(--font-body);transition:border .2s}
+.cf-field input:focus,.cf-field textarea:focus{border-color:#3B82F6}
+.cf-field textarea{resize:vertical}
+.what-next-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;overflow:hidden;border:1px solid var(--border);background:var(--border)}
+@media(max-width:48rem){.what-next-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:30rem){.what-next-grid{grid-template-columns:1fr}}
+/* AGREEMENT FORM */
+.agreement-form{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:2.5rem;max-width:720px;margin:0 auto}
+.ag-header{margin-bottom:2rem;padding-bottom:1.25rem;border-bottom:1px solid var(--border);text-align:center}
+.ag-brand{font-family:var(--font-display);font-size:1.3rem;font-weight:700;color:#3B82F6}
+.ag-sub{font-size:.8rem;color:var(--muted-foreground);margin-top:.2rem}
+.ag-section{margin-bottom:1.75rem}
+.ag-section-title{font-family:var(--font-mono);font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:#ff6b00;margin-bottom:1rem;padding-bottom:.5rem;border-bottom:1px solid var(--border)}
+.ag-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
+@media(max-width:36rem){.ag-row{grid-template-columns:1fr}}
+.ag-field{margin-bottom:.25rem}
+.ag-field label{display:block;font-size:.75rem;font-weight:600;margin-bottom:.35rem;color:var(--foreground)}
+.ag-field input,.ag-field select,.ag-field textarea{width:100%;padding:.6rem .8rem;border:1px solid var(--input);border-radius:8px;font-size:.82rem;background:var(--background);color:var(--foreground);outline:none;font-family:var(--font-body);transition:border .2s}
+.ag-field input:focus,.ag-field select:focus,.ag-field textarea:focus{border-color:#3B82F6}
+.ag-field textarea{resize:vertical}
+.ag-check{display:flex;align-items:flex-start;gap:.6rem}
+.ag-check input[type=checkbox]{width:16px;height:16px;margin-top:3px;accent-color:#3B82F6}
+.ag-check label{font-size:.82rem;color:var(--foreground);cursor:pointer}
+.ag-footer{text-align:center;margin-top:1.5rem;padding-top:1.25rem;border-top:1px solid var(--border);font-family:var(--font-mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted-foreground)}
+/* MARQUEE */
+.marquee-wrap{width:100%;overflow:hidden;padding:4rem 0}
+.marquee-track{display:flex;gap:4rem;animation:marquee 20s linear infinite;width:max-content}
+.marquee-track span{font-family:var(--font-display);font-size:clamp(4rem,18vw,12rem);font-weight:700;line-height:1;color:transparent;-webkit-text-stroke:1.5px #3B82F6;white-space:nowrap;user-select:none;letter-spacing:.08em;opacity:.5}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+/* FOOTER */
+.footer{border-top:1px solid var(--border);padding:3rem 0 1.5rem}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem}
+@media(max-width:48rem){.footer-grid{grid-template-columns:1fr 1fr;gap:2rem}}
+@media(max-width:40rem){.footer-grid{grid-template-columns:1fr}}
+.footer-brand .flogo{display:flex;align-items:center;gap:.5rem;font-family:var(--font-display);font-weight:700;font-size:1rem}
+.footer-brand .flogo img{height:4.5rem;width:auto;border-radius:10px}
+.footer-brand p{font-size:.8rem;color:var(--muted-foreground);line-height:1.6;margin-top:.75rem;max-width:300px}
+.footer-col h4{font-family:var(--font-mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:#3B82F6;margin-bottom:1rem}
+.footer-col a{display:block;font-size:.8rem;color:var(--muted-foreground);padding:.25rem 0;transition:color .2s;text-decoration:none}
+.footer-col a:hover{color:var(--foreground)}
+.footer-bottom{border-top:1px solid var(--border);margin-top:2rem;padding-top:1.25rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.75rem;font-size:.75rem;color:var(--muted-foreground)}
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}.d5{transition-delay:.5s}
+/* WHATSAPP FLOAT */
+.wa-float{position:fixed;bottom:1.5rem;right:1.5rem;z-index:99;width:48px;height:48px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.3);transition:all .3s;color:#fff;text-decoration:none}
+.wa-float:hover{transform:scale(1.08)}
+.wa-float svg{width:22px;height:22px;fill:currentColor}
+.toast{position:fixed;bottom:5rem;right:1.5rem;z-index:200;padding:.7rem 1.25rem;border-radius:999px;background:var(--card);border:1px solid var(--border);color:var(--foreground);font-size:.8rem;box-shadow:0 20px 60px rgba(0,0,0,.5);opacity:0;transform:translateY(20px);transition:all .3s;pointer-events:none}
+.toast.show{opacity:1;transform:translateY(0)}
+/* SCROLL TOP */
+.scroll-top{position:fixed;bottom:5.5rem;right:1.5rem;z-index:98;width:40px;height:40px;border-radius:50%;background:var(--card);border:1.5px solid #ff6b00;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .3s;color:#3B82F6;font-size:1.1rem;opacity:0;pointer-events:none;transform:translateY(10px);text-decoration:none}
+.scroll-top.visible{opacity:1!important;pointer-events:auto!important;transform:translateY(0)!important}
+.scroll-top:hover{background:rgba(255,107,0,.08);transform:translateY(-2px)}
+</style>
+</head>
+<body>
+<a href="https://wa.me/917989950973?text=Hi%20StudioZar%2C%20I%20need%20a%20website%2Fcontent!" class="wa-float" aria-label="WhatsApp" target="_blank" rel="noopener">
+<svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+<div class="toast" id="toast"></div>
+<a href="#" class="scroll-top" id="scrollTop" aria-label="Scroll to top">↑</a>
+
+<nav class="nav">
+<div class="nav-inner">
+<div class="nav-left">
+<img src="images/logo2.png" alt="StudioZar" />
+<div>
+<div class="nav-brand"><span class="s-blue">Studio</span><span class="z-orange">Zar</span></div>
+<div class="nav-tagline">Design <span class="sep">|</span> Develop <span class="sep">|</span> Grow</div>
+</div>
+</div>
+<div class="nav-right" id="nav">
+<a href="#home">Home</a>
+<a href="#services">Services</a>
+<a href="#pricing">Pricing</a>
+<a href="#contact">Contact</a>
+<a href="#agreement">Agreement</a>
+<a href="https://wa.me/917989950973?text=Hi%20StudioZar%2C%20I%20want%20to%20start%20my%20project!" target="_blank" rel="noopener" class="nav-btn">Get Started</a>
+<button class="mob-toggle" id="mToggle" aria-label="Menu">
+<span></span><span></span><span></span>
+</button>
+</div>
+</div>
+</nav>
+
+<section id="home" class="hero">
+<div class="hero-bg"></div>
+<div class="hero-grid"></div>
+<div class="container hero-content">
+<div class="hero-strip">
+<a href="#services">Websites</a>
+<a href="#services">Canva Content</a>
+<a href="#services">UI/UX</a>
+<a href="#services">SEO</a>
+<a href="#contact">Contact</a>
+<a href="https://www.instagram.com/studiozar_design_develop_grow/" target="_blank" rel="noopener">Instagram</a>
+</div>
+<span class="text-mega-outline">S T U D I O</span>
+<span class="text-mega">Z A R</span>
+<div class="hero-tagline">We Create.<br /><span style="color:#ff6b00">You Grow.</span></div>
+<p class="hero-desc">Professional website building and Canva content creation for businesses that want to stand out. Clean code, stunning visuals, zero hassle.</p>
+<div class="hero-actions">
+<a href="https://wa.me/917989950973?text=Hi%20StudioZar%2C%20I%20want%20to%20start%20my%20project!" target="_blank" rel="noopener" class="btn">💬 WhatsApp Us</a>
+<a href="#services" class="btn">Explore Services ↓</a>
+</div>
+</div>
+<div class="scroll-indicator"><span></span></div>
+</section>
+
+<section id="services" class="section-pad">
+<div class="container">
+<div class="section-label">Capabilities</div>
+<h2 class="section-head">What We <span class="text-outline">Do</span></h2>
+<p class="section-desc">Two core services that cover your entire digital presence — from building the platform to filling it with stunning content.</p>
+<div class="services-row">
+<div class="srv-card reveal">
+<div class="srv-num">01 / 02</div>
+<h3>Website Building</h3>
+<p>Custom-coded, mobile-responsive websites built with modern technologies. Fast loading, SEO-optimized, conversion-focused. From single-page landing sites to multi-page business platforms — we craft digital experiences that perform.</p>
+<div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1rem">
+<span class="srv-tag">HTML/CSS</span>
+<span class="srv-tag">JavaScript</span>
+<span class="srv-tag">React</span>
+<span class="srv-tag">Responsive</span>
+<span class="srv-tag">SEO</span>
+</div>
+<a href="https://wa.me/917989950973?text=Hi%20StudioZar%2C%20I%20want%20a%20website%20built!" target="_blank" rel="noopener" class="btn-link">Order Website →</a>
+</div>
+<div class="srv-card reveal d1">
+<div class="srv-num">02 / 02</div>
+<h3>Canva Content Creation</h3>
+<p>Eye-catching social media posts, banners, presentations, brochures, flyers, and brand assets designed in Canva. Consistent branding, fast turnaround, 3 revisions included to get it just right.</p>
+<div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1rem">
+<span class="srv-tag">Social Posts</span>
+<span class="srv-tag">Banners</span>
+<span class="srv-tag">Brand Kits</span>
+<span class="srv-tag">Flyers</span>
+<span class="srv-tag">Presentations</span>
+</div>
+<a href="https://wa.me/917989950973?text=Hi%20StudioZar%2C%20I%20need%20Canva%20content%20created!" target="_blank" rel="noopener" class="btn-link">Order Content →</a>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section-pad" style="padding-top:0">
+<div class="container">
+<div class="section-label">StudioZar Advantage</div>
+<h2 class="section-head">Why <span class="text-outline">Us</span></h2>
+<p class="section-desc">We keep it simple — great work, fair prices, and no-nonsense communication.</p>
+<div class="adv-grid">
+<div class="adv-item reveal">
+<div class="anum">01</div><div class="aicon">⚡</div><h3>Fast Delivery</h3><p>Most websites delivered in 3–7 days. Content in 24 hrs.</p><div class="aval">3-7 Days</div>
+</div>
+<div class="adv-item reveal d1">
+<div class="anum">02</div><div class="aicon">🎯</div><h3>WhatsApp Communication</h3><p>Direct, instant. No email chains, no delays.</p><div class="aval">Instant</div>
+</div>
+<div class="adv-item reveal d2">
+<div class="anum">03</div><div class="aicon">🔄</div><h3>3 Revisions</h3><p>We offer up to 3 revisions to get it right — clear scope, no unlimited back-and-forth.</p>
+</div>
+<div class="adv-item reveal d3">
+<div class="anum">04</div><div class="aicon">💰</div><h3>Affordable Pricing</h3><p>Premium quality at prices that won't burn a hole in your pocket.</p><div class="aval">Starting ₹5k</div>
+</div>
+<div class="adv-item reveal d4">
+<div class="anum">05</div><div class="aicon">🤝</div><h3>Local Support</h3><p>Based in Tirupati. We understand Indian businesses best.</p><div class="aval">Tirupati</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section-pad" style="padding-top:0">
+<div class="container">
+<div class="section-label">The Process</div>
+<h2 class="section-head">How We <span class="text-outline">Work</span></h2>
+<p class="section-desc">Simple, transparent steps from start to launch.</p>
+<div class="process-grid">
+<div class="proc-step reveal">
+<div class="snum">STEP 01</div><h3>Discuss</h3><p>Tell us what you need — website or content. We'll understand your vision and requirements.</p>
+</div>
+<div class="proc-step reveal d1">
+<div class="snum">STEP 02</div><h3>Design</h3><p>We create wireframes or draft designs. You review and give feedback on WhatsApp.</p>
+</div>
+<div class="proc-step reveal d2">
+<div class="snum">STEP 03</div><h3>Build</h3><p>We code the website or design the content. Clean, fast, pixel-perfect execution.</p>
+</div>
+<div class="proc-step reveal d3">
+<div class="snum">STEP 04</div><h3>Review</h3><p>You review the final output. We make any revisions needed.</p>
+</div>
+<div class="proc-step reveal d4">
+<div class="snum">STEP 05</div><h3>Launch</h3><p>Website goes live or content is delivered. We're always available for support.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="pricing" class="section-pad" style="padding-top:0">
+<div class="container">
+<div class="section-label">Detailed Pricing</div>
+<h2 class="section-head">Websites We <span class="text-outline">Build</span></h2>
+<p class="section-desc">Custom-coded, mobile-responsive websites at honest prices. No page builders, no templates — built from scratch.</p>
+<div class="svc-grid">
+<div class="svc-card-det reveal">
+<div class="svc-num-det">01 / 04</div>
+<h3>Service-Based Website</h3>
+<div class="svc-price-det">₹5,000 <span>one-time</span></div>
+<div class="svc-sub-det">Perfect for consultants, freelancers, clinics, and local service businesses.</div>
+<ul><li>Basic UI/UX</li><li>5 Pages (Home, About, Services, Testimonials, Contact)</li><li>Social Media Integration</li></ul>
+<div class="svc-addon-det">Additional Page: ₹1,000</div>
+<a href="https://wa.me/917989950973?text=Hi%20StudioZar%2C%20I'm%20interested%20in%20the%20Service-Based%20Website%20(%E2%82%B95%2C000)" target="_blank" rel="noopener" class="btn">Get Started <span class="arrow">→</span></a>
+</div>
+<div class="svc-card-det reveal d1">
+<div class="svc-num-det">02 / 04</div>
+<h3>Product-Based Website</h3>
+<div class="svc-price-det">₹7,000 <span>one-time</span></div>
+<div class="svc-sub-det">Ideal for small stores, manufacturers, and wholesalers.</div>
+<ul><li>Up to 50 Products</li><li>WhatsApp Cart</li><li>Basic UI/UX</li><li>5 Core Pages</li><li>Social Media Integration</li></ul>
+<div class="svc-addon-det">Additional 50 Products: ₹1,000</div>
+<a href="https://wa.me/917989950973?text=Hi%20StudioZar%2C%20I'm%20interested%20in%20the%20Product-Based%20Website%20(%E2%82%B97%2C000)" target="_blank" rel="noopener" class="btn">Get Started <span class="arrow">→</span></a>
+</div>
+<div class="svc-card-det reveal d2">
+<div class="svc-num-det">03 / 04</div>
+<h3>Semi E-Commerce</h3>
+<div class="svc-price-det">₹15,000 <span>one-time</span></div>
+<div class="svc-sub-det">For businesses ready to sell online with management tools.</div>
+<ul><li>Dynamic Website</li><li>WhatsApp Integration</li><li>Admin Panel</li><li>Product Management</li><li>Promo Codes</li><li>5 Core Pages</li></ul>
+<a href="https://wa.me/917989950973?text=Hi%20StudioZar%2C%20I'm%20interested%20in%20the%20Semi%20E-Commerce%20(%E2%82%B915%2C000)" target="_blank" rel="noopener" class="btn">Get Started <span class="arrow">→</span></a>
+</div>
+<div class="svc-card-det reveal d3">
+<div class="svc-num-det">04 / 04</div>
+<h3>Full E-Commerce</h3>
+<div class="svc-price-det">₹25,000 <span>one-time</span></div>
+<div class="svc-sub-det">Complete online store with payments, login, and order management.</div>
+<ul><li>Razorpay Payment Gateway</li><li>Admin Panel</li><li>Customer Google Login</li><li>Order Management</li><li>Responsive Design</li></ul>
+<div class="svc-addon-det" style="margin-top:.5rem">Add-ons: Invoice Printing, Custom UI/UX, Delivery Integration, OTP Login, WhatsApp Alerts</div>
+<a href="https://wa.me/917989950973?text=Hi%20StudioZar%2C%20I'm%20interested%20in%20the%20Full%20E-Commerce%20(%E2%82%B925%2C000)" target="_blank" rel="noopener" class="btn">Get Started <span class="arrow">→</span></a>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section-pad" style="padding-top:0">
+<div class="container">
+<div class="section-label">Maintenance Plans</div>
+<h2 class="section-head">Keep Your Site <span class="text-outline">Healthy</span></h2>
+<p class="section-desc">Ongoing care to keep your website secure, fast, and up-to-date.</p>
+<div class="mtn-grid">
+<div class="mtn-card reveal">
+<div class="mtn-label">01 / 03</div>
+<h4>Care Basic</h4>
+<div class="svc-price-det">₹1,500 <span>/mo</span></div>
+<ul><li>Monthly Backups</li><li>2 Content Updates</li><li>Uptime Monitoring</li><li>Security Checks</li></ul>
+<a href="https://wa.me/917989950973?text=Hi%20StudioZar%2C%20I'm%20interested%20in%20Care%20Basic%20(%E2%82%B91%2C500%2Fmo)" target="_blank" rel="noopener" class="btn">Select Package <span class="arrow">→</span></a>
+</div>
+<div class="mtn-card reveal d1">
+<div class="mtn-label">02 / 03</div>
+<h4>Care Pro</h4>
+<div class="svc-price-det">₹3,500 <span>/mo</span></div>
+<ul><li>Weekly Backups</li><li>8 Content Updates</li><li>Plugin Updates</li><li>Performance Optimization</li><li>Priority Support</li></ul>
+<a href="https://wa.me/917989950973?text=Hi%20StudioZar%2C%20I'm%20interested%20in%20Care%20Pro%20(%E2%82%B93%2C500%2Fmo)" target="_blank" rel="noopener" class="btn">Select Package <span class="arrow">→</span></a>
+</div>
+<div class="mtn-card reveal d2">
+<div class="mtn-label">03 / 03</div>
+<h4>Care E-Commerce</h4>
+<div class="svc-price-det">₹6,500 <span>/mo</span></div>
+<ul><li>Daily Backups</li><li>Unlimited Minor Updates</li><li>Payment Gateway Monitoring</li><li>Bug Fixes</li><li>Monthly Reports</li></ul>
+<a href="https://wa.me/917989950973?text=Hi%20StudioZar%2C%20I'm%20interested%20in%20Care%20E-Commerce%20(%E2%82%B96%2C500%2Fmo)" target="_blank" rel="noopener" class="btn">Select Package <span class="arrow">→</span></a>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section-pad" style="padding-top:0">
+<div class="container">
+<div class="section-label">Canva Content</div>
+<h2 class="section-head">Design That <span class="text-outline">Pops</span></h2>
+<p class="section-desc">Social media posts, banners, brochures, presentations — all designed in Canva with your brand colors and style.</p>
+<div class="mtn-card reveal" style="max-width:380px">
+<div class="mtn-label">Content Subscription</div>
+<h4>Canva Content</h4>
+<div class="svc-price-det">₹3,000 <span>/mo</span></div>
+<ul><li>10 Social Media Posts</li><li>Custom Brand Kit</li><li>3 Revisions</li><li>Same-Day Delivery</li><li>Banners & Flyers Included</li></ul>
+<a href="https://wa.me/917989950973?text=Hi%20StudioZar%2C%20I'm%20interested%20in%20Canva%20Content%20(%E2%82%B93%2C000%2Fmo)" target="_blank" rel="noopener" class="btn">Subscribe <span class="arrow">→</span></a>
+</div>
+</div>
+</section>
+
+<section id="contact" class="section-pad" style="padding-top:0">
+<div class="container">
+<div class="section-label">Say Hello</div>
+<h2 class="section-head">Let's Start <span class="text-outline">Something Great</span></h2>
+<p class="section-desc">Tell us where you want to go. We'll show you how to get there — faster.</p>
+<div class="contact-grid">
+<div class="contact-info reveal">
+<h3>Get In Touch</h3>
+<p>We're remote-first and always available on WhatsApp.</p>
+<div class="ci-grid">
+<div class="ci-item">
+<div class="ci-label">Location</div>
+<div class="ci-value">4-1-106, Patnool Street, Tirupati</div>
+</div>
+<div class="ci-item">
+<div class="ci-label">Email</div>
+<div class="ci-value"><a href="mailto:chandradigitalai@gmail.com">chandradigitalai@gmail.com</a></div>
+</div>
+<div class="ci-item">
+<div class="ci-label">Phone / WhatsApp</div>
+<div class="ci-value"><a href="https://wa.me/917989950973" target="_blank" rel="noopener">+91 7989950973</a></div>
+</div>
+<div class="ci-item">
+<div class="ci-label">Hours</div>
+<div class="ci-value">Mon–Fri · 10–19 IST</div>
+</div>
+</div>
+<div style="margin-top:1.5rem;display:flex;gap:.6rem;flex-wrap:wrap">
+<a href="https://www.instagram.com/studiozar_design_develop_grow/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.3rem;font-size:.75rem;padding:.35rem .75rem;border-radius:999px;background:rgba(255,107,0,.08);color:var(--accent);border:1px solid rgba(255,107,0,.12);text-decoration:none">📸 Instagram</a>
+</div>
+</div>
+<div class="contact-form reveal d1">
+<form id="contactForm">
+<div class="cf-row">
+<div class="cf-field"><label>Your name *</label><input type="text" id="cf-name" required placeholder="Your name" /></div>
+<div class="cf-field"><label>Email *</label><input type="email" id="cf-email" required placeholder="Email" /></div>
+</div>
+<div class="cf-field"><label>Company</label><input type="text" id="cf-company" placeholder="Company (optional)" /></div>
+<div class="cf-field"><label>Project details *</label><textarea id="cf-message" required rows="4" placeholder="Tell us about it..."></textarea></div>
+<button type="submit" class="btn" style="width:100%;justify-content:center;padding:.8rem">📤 Send message →</button>
+</form>
+</div>
+</div>
+<div class="section-label" style="margin-top:3rem">What happens next</div>
+<div class="what-next-grid reveal d2">
+<div class="proc-step"><div class="snum">01</div><h3>Discovery Call</h3><p>We learn your goals and challenges.</p></div>
+<div class="proc-step"><div class="snum">02</div><h3>Strategy</h3><p>We map the path to growth.</p></div>
+<div class="proc-step"><div class="snum">03</div><h3>Execution</h3><p>We design, build and launch.</p></div>
+<div class="proc-step"><div class="snum">04</div><h3>Growth</h3><p>We optimise and scale together.</p></div>
+</div>
+<div style="text-align:center;margin-top:2.5rem">
+<div class="section-label" style="justify-content:center">Ready to scale?</div>
+<a href="https://wa.me/917989950973?text=Hi%20StudioZar%2C%20I%20want%20to%20book%20a%20discovery%20call!" target="_blank" rel="noopener" class="btn" style="font-size:.9rem;padding:.75rem 2rem">📞 Book a discovery call →</a>
+</div>
+</div>
+</section>
+
+<section id="agreement" class="section-pad" style="padding-top:0">
+<div class="container">
+<div class="section-label">Formalize</div>
+<h2 class="section-head">Service <span class="text-outline">Agreement</span></h2>
+<p class="section-desc">Clear terms for clear partnerships. Fill this form to formalize your project with StudioZar.</p>
+<div class="agreement-form reveal">
+<div class="ag-header">
+<div class="ag-brand">Service Agreement</div>
+<div class="ag-sub">Client Agreement · StudioZar</div>
+</div>
+<form id="agreementForm">
+<div class="ag-section">
+<div class="ag-section-title">1. Client Details</div>
+<div class="ag-row">
+<div class="ag-field"><label>Full Name *</label><input type="text" id="ag-name" required placeholder="Your full name" /></div>
+<div class="ag-field"><label>Business Name</label><input type="text" id="ag-business" placeholder="Your business name" /></div>
+</div>
+<div class="ag-row">
+<div class="ag-field"><label>Phone / WhatsApp *</label><input type="tel" id="ag-phone" required placeholder="+91 9876543210" /></div>
+<div class="ag-field"><label>Email Address</label><input type="email" id="ag-email" placeholder="email@example.com" /></div>
+</div>
+<div class="ag-field"><label>Full Address</label><textarea id="ag-address" rows="2" placeholder="Street, city, state, pincode"></textarea></div>
+</div>
+<div class="ag-section">
+<div class="ag-section-title">2. Project Details</div>
+<div class="ag-row">
+<div class="ag-field"><label>Selected Package *</label><select id="ag-package" required>
+<option value="">Select a package...</option>
+<option value="Service-Based Website - ₹5,000">Service-Based Website — ₹5,000</option>
+<option value="Product-Based Website - ₹7,000">Product-Based Website — ₹7,000</option>
+<option value="Semi E-Commerce - ₹15,000">Semi E-Commerce — ₹15,000</option>
+<option value="Full E-Commerce - ₹25,000">Full E-Commerce — ₹25,000</option>
+<option value="Care Basic - ₹1,500/mo">Care Basic — ₹1,500/mo</option>
+<option value="Care Pro - ₹3,500/mo">Care Pro — ₹3,500/mo</option>
+<option value="Care E-Commerce - ₹6,500/mo">Care E-Commerce — ₹6,500/mo</option>
+<option value="Canva Content - ₹3,000/mo">Canva Content — ₹3,000/mo</option>
+<option value="Custom Project">Custom Project</option>
+</select></div>
+<div class="ag-field"><label>Custom Scope</label><input type="text" id="ag-scope" placeholder="e.g. Additional pages, features" /></div>
+</div>
+<div class="ag-row">
+<div class="ag-field"><label>Total Project Value (₹) *</label><input type="text" id="ag-value" required placeholder="e.g. 5000" /></div>
+<div class="ag-field"><label>Advance Paid (₹)</label><input type="text" id="ag-advance" placeholder="e.g. 2500" /></div>
+</div>
+<div class="ag-row">
+<div class="ag-field"><label>Payment Reference / UTR</label><input type="text" id="ag-utr" placeholder="UTR number or transaction ID" /></div>
+<div class="ag-field"><label>Delivery Timeline</label><input type="text" id="ag-timeline" placeholder="e.g. 7 days, 2 weeks" /></div>
+</div>
+</div>
+<div class="ag-section">
+<div class="ag-section-title">3. Agreement Terms</div>
+<div class="ag-check"><input type="checkbox" id="ag-terms" required /><label for="ag-terms">I have read and agree to the Service Agreement Terms.</label></div>
+</div>
+<div class="ag-section">
+<div class="ag-section-title">4. Authorization</div>
+<div class="ag-field"><label>Digital Signature (Type Full Name) *</label><input type="text" id="ag-sign" required placeholder="Sign here..." /></div>
+<div class="ag-field"><label>Date</label><input type="text" id="ag-date" value="17/6/2026" readonly style="color:var(--muted-foreground)" /></div>
+</div>
+<button type="submit" class="btn" style="width:100%;justify-content:center;padding:.8rem;margin-top:1rem">📄 Submit Agreement via WhatsApp</button>
+</form>
+<div class="ag-footer">Built on clarity</div>
+</div>
+</div>
+</section>
+
+<section style="overflow:hidden">
+<div class="marquee-wrap">
+<div class="marquee-track">
+<span>S T U D I O Z A R</span>
+<span>S T U D I O Z A R</span>
+<span>S T U D I O Z A R</span>
+<span>S T U D I O Z A R</span>
+</div>
+</div>
+</section>
+
+<footer class="footer">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-brand">
+<div class="flogo">
+<img src="images/logo2.png" alt="StudioZar" />
+<div>
+<div class="nav-brand"><span class="s-blue">Studio</span><span class="z-orange">Zar</span></div>
+<div class="nav-tagline">Design <span class="sep">|</span> Develop <span class="sep">|</span> Grow</div>
+</div>
+</div>
+<p>Website building & Canva content creation. We build your digital presence so you can focus on growing your business.</p>
+<div style="display:flex;gap:.75rem;margin-top:1rem">
+<a href="https://wa.me/917989950973" target="_blank" rel="noopener" style="color:var(--muted-foreground);font-size:1.1rem;text-decoration:none">💬</a>
+<a href="mailto:chandradigitalai@gmail.com" style="color:var(--muted-foreground);font-size:1.1rem;text-decoration:none">📧</a>
+<a href="https://www.instagram.com/studiozar_design_develop_grow/" target="_blank" rel="noopener" style="color:var(--muted-foreground);font-size:1.1rem;text-decoration:none">📸</a>
+</div>
+</div>
+<div class="footer-col">
+<h4>Services</h4>
+<a href="#services">Website Building</a>
+<a href="#services">Canva Content</a>
+<a href="#pricing">Pricing</a>
+<a href="#agreement">Agreement</a>
+</div>
+<div class="footer-col">
+<h4>Quick Links</h4>
+<a href="#home">Home</a>
+<a href="#pricing">Pricing</a>
+<a href="#contact">Contact</a>
+<a href="https://wa.me/917989950973" target="_blank" rel="noopener">WhatsApp</a>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© 2026 StudioZar. All rights reserved.</span>
+<span>Crafted by Chandra Nandipati</span>
+</div>
+</div>
+</footer>
+
+<script>
+const mt=document.getElementById('mToggle');
+const nv=document.getElementById('nav');
+if(mt){mt.addEventListener('click',function(e){e.stopPropagation();nv.classList.toggle('open');this.classList.toggle('active')});document.addEventListener('click',function(e){if(!nv.contains(e.target)&&e.target!==mt){nv.classList.remove('open');mt.classList.remove('active')})}}
+const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1,rootMargin:'0px 0px -50px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+function showToast(t){const el=document.getElementById('toast');if(!el)return;el.textContent=t;el.classList.add('show');setTimeout(()=>el.classList.remove('show'),3500)}
+const st=document.getElementById('scrollTop');
+if(st){window.addEventListener('scroll',function(){if(window.scrollY>200)st.classList.add('visible');else st.classList.remove('visible')});st.addEventListener('click',function(e){e.preventDefault();window.scrollTo({top:0,behavior:'smooth'})})};setTimeout(function(){if(st)st.classList.add('visible')},1000)
+document.getElementById('contactForm').addEventListener('submit',function(e){e.preventDefault();const f=this,n=f['cf-name']?.value||'',em=f['cf-email']?.value||'',co=f['cf-company']?.value||'',msg=f['cf-message']?.value||'',t='Hi%20StudioZar%2C%0A%0A*New%20Contact%20Inquiry*%0A%0AName%3A%20'+encodeURIComponent(n)+'%0AEmail%3A%20'+encodeURIComponent(em)+'%0ACompany%3A%20'+encodeURIComponent(co)+'%0A%0A*Message%3A*%0A'+encodeURIComponent(msg);window.open('https://wa.me/917989950973?text='+t,'_blank');showToast('✅ Message sent to WhatsApp!')});
+document.getElementById('agreementForm').addEventListener('submit',function(e){e.preventDefault();const f=this,n=f['ag-name']?.value||'',b=f['ag-business']?.value||'',p=f['ag-phone']?.value||'',em=f['ag-email']?.value||'',a=f['ag-address']?.value||'',pk=f['ag-package']?.value||'',sc=f['ag-scope']?.value||'',v=f['ag-value']?.value||'',ad=f['ag-advance']?.value||'',ut=f['ag-utr']?.value||'',tl=f['ag-timeline']?.value||'',sg=f['ag-sign']?.value||'',dt=f['ag-date']?.value||'',msg='Hi%20StudioZar%2C%0A%0A*New%20Service%20Agreement*%0A%0A---%20Client%20Details%20---%0AName%3A%20'+encodeURIComponent(n)+'%0ABusiness%3A%20'+encodeURIComponent(b)+'%0APhone%3A%20'+encodeURIComponent(p)+'%0AEmail%3A%20'+encodeURIComponent(em)+'%0AAddress%3A%20'+encodeURIComponent(a)+'%0A%0A---%20Project%20Details%20---%0APackage%3A%20'+encodeURIComponent(pk)+'%0AScope%3A%20'+encodeURIComponent(sc)+'%0AValue%3A%20%E2%82%B9'+encodeURIComponent(v)+'%0AAdvance%3A%20%E2%82%B9'+encodeURIComponent(ad)+'%0AUTR%3A%20'+encodeURIComponent(ut)+'%0ATimeline%3A%20'+encodeURIComponent(tl)+'%0A%0A---%20Authorization%20---%0ASignature%3A%20'+encodeURIComponent(sg)+'%0ADate%3A%20'+encodeURIComponent(dt);window.open('https://wa.me/917989950973?text='+msg,'_blank');showToast('✅ Agreement sent to WhatsApp!')});
+</script>
+</body>
+</html>

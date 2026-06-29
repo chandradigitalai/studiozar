@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<title>YOUR BLOG POST TITLE — StudioZar</title>
+<meta name="description" content="Write a 150-character description of this blog post here. This will show in Google search results." />
+<link rel="icon" type="image/png" href="images/logo2.png" />
+<link rel="canonical" href="https://studiozar.in/your-blog-post-filename.html" />
+<meta property="og:title" content="YOUR BLOG POST TITLE — StudioZar" />
+<meta property="og:description" content="Write a 150-character description of this blog post here." />
+<meta property="og:image" content="images/logo2.png" />
+<meta property="og:type" content="article" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="YOUR BLOG POST TITLE — StudioZar" />
+<meta name="twitter:description" content="Write a 150-character description of this blog post here." />
+<meta name="twitter:image" content="images/logo2.png" />
+<meta name="keywords" content="add, relevant, keywords, here, separated, by, commas" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+*,:before,:after{margin:0;padding:0;box-sizing:border-box}
+:root{--background:#0f0f0f;--foreground:#f8f8f8;--card:#1a1a1a;--card-foreground:#f8f8f8;--popover:#1a1a1a;--popover-foreground:#f8f8f8;--primary:#f8f8f8;--primary-foreground:#0f0f0f;--secondary:#292929;--secondary-foreground:#f8f8f8;--muted:#242424;--muted-foreground:#a0a0a0;--accent:#ff6b00;--accent-foreground:#0f0f0f;--destructive:#ef4444;--border:#ffffff17;--input:#ffffff24;--ring:#ff6b00;--line:#ffffff0f;--radius:.25rem;--font-display:'Space Grotesk',sans-serif;--font-body:'Inter',sans-serif;--font-mono:'Space Grotesk',monospace}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--background);color:var(--foreground);line-height:1.6;overflow-x:hidden}
+::-webkit-scrollbar{width:0;height:0}
+.container{max-width:800px;margin:0 auto;padding:0 1.5rem}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(15,15,15,0.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:.5rem 1.5rem}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;min-height:5.5rem;max-width:1200px;margin:0 auto}
+.nav-left{display:flex;align-items:center;gap:.8rem}
+.nav-left img{height:5rem;width:auto;border-radius:10px}
+.nav-brand{font-family:var(--font-display);font-weight:700;font-size:1.4rem;line-height:1.1;letter-spacing:-.02em}
+.nav-brand .s-blue{color:#3B82F6}
+.nav-brand .z-orange{color:#ff6b00}
+.nav-tagline{font-size:.8rem;color:#fff;letter-spacing:.08em;margin-top:.15rem}
+.nav-tagline .sep{color:#3B82F6;margin:0 .45rem}
+.nav-right{display:flex;align-items:center;gap:1.2rem}
+.nav-right a{font-size:.78rem;font-weight:500;color:var(--muted-foreground);transition:color .2s;letter-spacing:.02em;position:relative;text-decoration:none}
+.nav-right a:hover{color:var(--foreground)}
+.nav-right a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1px;background:#3B82F6;transition:width .3s}
+.nav-right a:hover::after{width:100%}
+.nav-btn{font-family:var(--font-mono);font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:.45rem 1.1rem;border-radius:999px;background:transparent;color:#3B82F6;border:1.5px solid #ff6b00;cursor:pointer;transition:all .25s;text-decoration:none}
+.nav-btn:hover{background:rgba(255,107,0,.08);transform:translateY(-1px)}
+.mob-toggle{display:none;flex-direction:column;gap:4px;cursor:pointer;background:none;border:none;padding:4px}
+.mob-toggle span{display:block;width:20px;height:1.5px;background:var(--foreground);transition:.3s;border-radius:1px}
+.mob-toggle.active span:nth-child(1){transform:rotate(45deg)translate(4px,4px)}
+.mob-toggle.active span:nth-child(2){opacity:0}
+.mob-toggle.active span:nth-child(3){transform:rotate(-45deg)translate(4px,-4px)}
+@media(max-width:48rem){.nav-right a:not(.nav-btn){display:none}.mob-toggle{display:flex}.nav-right.open a:not(.nav-btn){display:block}.nav-right.open{position:absolute;top:100%;left:0;right:0;background:var(--card);flex-direction:column;padding:1.2rem 1.5rem;border-bottom:1px solid var(--border);gap:.8rem;box-shadow:0 20px 60px rgba(0,0,0,.5)}}
+.post-header{padding:7rem 0 2rem}
+.post-header .post-cat{font-family:var(--font-mono);font-size:.6rem;letter-spacing:.12em;color:#3B82F6;margin-bottom:.5rem}
+.post-header .post-date{font-size:.75rem;color:var(--muted-foreground);margin-bottom:1rem}
+.post-header h1{font-family:var(--font-display);font-size:clamp(1.5rem,4vw,2.5rem);font-weight:700;line-height:1.1;letter-spacing:-.02em;color:var(--foreground)}
+.post-content{padding:0 0 3rem}
+.post-content h2{font-family:var(--font-display);font-size:1.3rem;font-weight:600;margin:1.5rem 0 .75rem;color:var(--foreground)}
+.post-content h3{font-family:var(--font-display);font-size:1.05rem;font-weight:600;margin:1.25rem 0 .5rem;color:var(--foreground)}
+.post-content p{color:var(--muted-foreground);margin-bottom:1rem;line-height:1.8}
+.post-content ul,.post-content ol{padding-left:1.5rem;margin-bottom:1rem;color:var(--muted-foreground)}
+.post-content li{margin-bottom:.35rem}
+.post-content a{color:#3B82F6;text-decoration:underline}
+.post-content a:hover{color:#ff6b00}
+.post-cta{background:var(--card);border:1px solid var(--border);padding:2rem;text-align:center;margin:2rem 0}
+.post-cta p{color:var(--muted-foreground);font-size:.85rem;margin-bottom:.75rem}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.65rem 1.5rem;border-radius:999px;font-weight:600;font-size:.8rem;transition:all .25s;border:1.5px solid #ff6b00;cursor:pointer;font-family:var(--font-body);text-decoration:none;background:transparent;color:#3B82F6}
+.btn:hover{background:rgba(255,107,0,.08);transform:translateY(-1px)}
+.btn-wa{background:transparent;color:#3B82F6;border:1.5px solid #ff6b00}
+.btn-wa:hover{background:rgba(255,107,0,.08);transform:translateY(-1px)}
+.footer{border-top:1px solid var(--border);padding:3rem 1.5rem 1.5rem;margin-top:3rem;max-width:1200px;margin-left:auto;margin-right:auto}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem}
+@media(max-width:48rem){.footer-grid{grid-template-columns:1fr 1fr;gap:2rem}}
+@media(max-width:40rem){.footer-grid{grid-template-columns:1fr}}
+.footer-brand .flogo{display:flex;align-items:center;gap:.5rem;font-family:var(--font-display);font-weight:700;font-size:1rem}
+.footer-brand .flogo img{height:4.5rem;width:auto;border-radius:10px}
+.footer-brand p{font-size:.8rem;color:var(--muted-foreground);line-height:1.6;margin-top:.75rem;max-width:300px}
+.footer-col h4{font-family:var(--font-mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:#3B82F6;margin-bottom:1rem}
+.footer-col a{display:block;font-size:.8rem;color:var(--muted-foreground);padding:.25rem 0;transition:color .2s;text-decoration:none}
+.footer-col a:hover{color:var(--foreground)}
+.footer-bottom{border-top:1px solid var(--border);margin-top:2rem;padding-top:1.25rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.75rem;font-size:.75rem;color:var(--muted-foreground)}
+.wa-float{position:fixed;bottom:1.5rem;right:1.5rem;z-index:99;width:48px;height:48px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.3);transition:all .3s;color:#fff;text-decoration:none}
+.wa-float:hover{transform:scale(1.08)}
+.wa-float svg{width:22px;height:22px;fill:currentColor}
+.toast{position:fixed;bottom:5rem;right:1.5rem;z-index:200;padding:.7rem 1.25rem;border-radius:999px;background:var(--card);border:1px solid var(--border);color:var(--foreground);font-size:.8rem;box-shadow:0 20px 60px rgba(0,0,0,.5);opacity:0;transform:translateY(20px);transition:all .3s;pointer-events:none}
+.toast.show{opacity:1;transform:translateY(0)}
+.scroll-top{position:fixed;bottom:5.5rem;right:1.5rem;z-index:98;width:40px;height:40px;border-radius:50%;background:var(--card);border:1.5px solid #ff6b00;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .3s;color:#3B82F6;font-size:1.1rem;opacity:0;pointer-events:none;transform:translateY(10px);text-decoration:none}
+.scroll-top.visible{opacity:1!important;pointer-events:auto!important;transform:translateY(0)!important}
+.scroll-top:hover{background:rgba(255,107,0,.08);transform:translateY(-2px)}
+.social-icon{color:var(--muted-foreground);text-decoration:none;display:inline-flex;transition:color .2s}
+.social-icon:hover{color:#3B82F6}
+.social-icon svg{transition:stroke .2s}
+.social-icon:hover svg{stroke:#ff6b00!important}
+</style>
+</head>
+<body>
+
+<a href="https://wa.me/917989950973?text=Hi%20StudioZar%2C%20I%20need%20a%20website%2Fcontent!" class="wa-float" aria-label="WhatsApp" target="_blank" rel="noopener">
+<svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+<div class="toast" id="toast"></div>
+<a href="#" class="scroll-top" id="scrollTop" aria-label="Scroll to top">&#8593;</a>
+
+<nav class="nav">
+<div class="nav-inner">
+<div class="nav-left">
+<img src="images/logo2.png" alt="StudioZar" />
+<div>
+<div class="nav-brand"><span class="s-blue">Studio</span><span class="z-orange">Zar</span></div>
+<div class="nav-tagline">Design <span class="sep">|</span> Develop <span class="sep">|</span> Grow</div>
+</div>
+</div>
+<div class="nav-right" id="nav">
+<a href="index.html">Home</a>
+<a href="services.html">Services</a>
+<a href="blog.html">Blog</a>
+<a href="agreement.html">Agreement</a>
+<a href="contact.html">Contact</a>
+<a href="https://wa.me/917989950973?text=Hi%20StudioZar%2C%20I%20want%20to%20start%20my%20project!" target="_blank" rel="noopener" class="nav-btn">Get Started</a>
+<button class="mob-toggle" id="mToggle" aria-label="Menu">
+<span></span><span></span><span></span>
+</button>
+</div>
+</div>
+</nav>
+
+<div class="post-header">
+<div class="container">
+<div class="post-cat">CATEGORY NAME</div>
+<div class="post-date">Date: June 2026</div>
+<h1>Your Blog Post Title Goes Here</h1>
+</div>
+</div>
+
+<div class="post-content">
+<div class="container">
+
+<p>Start writing your blog post here. This is the first paragraph. Introduce the topic and tell readers what this article is about.</p>
+
+<h2>First Section Heading</h2>
+<p>Write your content here. Each paragraph should be wrapped in &lt;p&gt; tags. Use &lt;h2&gt; for main section headings and &lt;h3&gt; for sub-sections.</p>
+
+<p>Keep paragraphs short and readable. Use bullet points for lists. Include keywords naturally for SEO.</p>
+
+<h3>Sub-Section Heading</h3>
+<p>More detailed content here. You can add as many paragraphs as you need.</p>
+
+<ul>
+<li>Point one about this topic</li>
+<li>Point two about this topic</li>
+<li>Point three about this topic</li>
+</ul>
+
+<h2>Second Section Heading</h2>
+<p>Continue writing. Aim for 500-1000 words per post for good SEO. Include relevant keywords your customers might search for.</p>
+
+<div class="post-cta">
+<p>Ready to start your project? Let's talk on WhatsApp!</p>
+<a href="https://wa.me/917989950973?text=Hi%20StudioZar%2C%20I%20read%20your%20blog%20and%20want%20to%20start%20my%20project!" target="_blank" rel="noopener" class="btn btn-wa">Start Your Project &#8594;</a>
+</div>
+
+</div>
+</div>
+
+<footer class="footer">
+<div class="footer-grid">
+<div class="footer-brand">
+<div class="flogo">
+<img src="images/logo2.png" alt="StudioZar" />
+<div>
+<div class="nav-brand"><span class="s-blue">Studio</span><span class="z-orange">Zar</span></div>
+<div class="nav-tagline">Design <span class="sep">|</span> Develop <span class="sep">|</span> Grow</div>
+</div>
+</div>
+<p>Website building & Canva content creation. We build your digital presence so you can focus on growing your business.</p>
+<div style="display:flex;gap:.75rem;margin-top:1rem;align-items:center">
+<a href="https://wa.me/917989950973" target="_blank" rel="noopener" class="social-icon" aria-label="WhatsApp"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="1.8"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+<a href="mailto:chandradigitalai@gmail.com" class="social-icon" aria-label="Email"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="1.8"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></a>
+<a href="https://www.instagram.com/studiozar_design_develop_grow/" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="1.8"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+<a href="https://www.facebook.com/studiozar" target="_blank" rel="noopener" class="social-icon" aria-label="Facebook"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="1.8"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+<a href="https://www.youtube.com/@StudioZarDigital" target="_blank" rel="noopener" class="social-icon" aria-label="YouTube"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="1.8"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+</div>
+</div>
+<div class="footer-col">
+<h4>Services</h4>
+<a href="services.html">Website Building</a>
+<a href="services.html">Canva Content</a>
+<a href="website-development-tirupati.html">Web Dev Tirupati</a>
+<a href="digital-marketing-tirupati.html">Digital Marketing</a>
+<a href="school-website-design.html">School Websites</a>
+<a href="small-business-website.html">Small Business Sites</a>
+<a href="agreement.html">Agreement</a>
+</div>
+<div class="footer-col">
+<h4>Quick Links</h4>
+<a href="index.html">Home</a>
+<a href="services.html">Pricing</a>
+<a href="blog.html">Blog</a>
+<a href="agreement.html">Agreement</a>
+<a href="contact.html">Contact</a>
+<a href="https://wa.me/917989950973" target="_blank" rel="noopener">WhatsApp</a>
+</div>
+</div>
+<div class="footer-bottom">
+<span>&#169; 2026 StudioZar. All rights reserved.</span>
+<span>Crafted by Chandra Nandipati</span>
+</div>
+</footer>
+
+<script>
+const mt=document.getElementById('mToggle');
+const nv=document.getElementById('nav');
+if(mt){mt.addEventListener('click',function(e){e.stopPropagation();nv.classList.toggle('open');this.classList.toggle('active')});document.addEventListener('click',function(e){if(!nv.contains(e.target)&&e.target!==mt){nv.classList.remove('open');mt.classList.remove('active')}})}
+const st=document.getElementById('scrollTop');
+if(st){window.addEventListener('scroll',function(){if(window.scrollY>200)st.classList.add('visible');else st.classList.remove('visible')});st.addEventListener('click',function(e){e.preventDefault();window.scrollTo({top:0,behavior:'smooth'})})};setTimeout(function(){if(st)st.classList.add('visible')},1000)
+</script>
+</body>
+</html>

@@ -1,0 +1,824 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>StudioZar — Design • Develop • Grow</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--primary:#0F172A;--secondary:#2563EB;--accent:#06B6D4;--bg:#F8FAFC;--fg:#1E293B;--card:#fff;--border:rgba(15,23,42,0.08);--muted:#64748B;--shadow:0 1px 3px rgba(0,0,0,0.04),0 4px 16px rgba(0,0,0,0.04);--shadow-lg:0 4px 24px rgba(0,0,0,0.06),0 12px 48px rgba(0,0,0,0.04);--radius:12px;--font-display:'Space Grotesk',sans-serif;--font-body:'Inter',sans-serif}
+html{scroll-behavior:smooth;scroll-padding-top:4.5rem}
+body{font-family:var(--font-body);background:var(--bg);color:var(--fg);line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 1.5rem}
+.header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(248,250,252,0.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:.7rem 0;transition:all .3s}
+.header-inner{display:flex;align-items:center;justify-content:space-between;flex-direction:row-reverse}
+.header-left{display:flex;align-items:center;gap:.6rem}
+.header-left img{height:2.2rem;width:auto;border-radius:6px}
+.header-left .brand{font-family:var(--font-display);font-weight:700;font-size:1.2rem}
+.header-left .tagline{font-size:.65rem;color:var(--muted);letter-spacing:.04em}
+.header-right{display:flex;align-items:center;gap:1.5rem}
+.header-right a{font-size:.85rem;font-weight:500;color:var(--muted);transition:color .2s;position:relative}
+.header-right a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:2px;background:var(--accent);transition:width .3s;border-radius:2px}
+.header-right a:hover{color:var(--fg)}
+.header-right a:hover::after{width:100%}
+.cta-btn{padding:.5rem 1.2rem;border-radius:999px;font-weight:600;font-size:.8rem;background:var(--secondary);color:#fff;border:none;cursor:pointer;transition:all .25s;font-family:var(--font-body)}
+.cta-btn:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(37,99,235,0.25)}
+.mobile-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.mobile-toggle span{display:block;width:22px;height:2px;background:var(--fg);transition:.3s;border-radius:2px}
+.mobile-toggle.active span:nth-child(1){transform:rotate(45deg)translate(5px,5px)}
+.mobile-toggle.active span:nth-child(2){opacity:0}
+.mobile-toggle.active span:nth-child(3){transform:rotate(-45deg)translate(5px,-5px)}
+@media(max-width:48rem){.header-right a:not(.cta-btn){display:none}.mobile-toggle{display:flex}.header-right.open a:not(.cta-btn){display:block}.header-right.open{position:absolute;top:100%;left:0;right:0;background:var(--card);flex-direction:column;padding:1.5rem;border-bottom:1px solid var(--border);gap:1rem;box-shadow:var(--shadow-lg)}}
+.page{min-height:100vh;padding:5rem 0 3rem}
+.hero{min-height:100vh;display:flex;align-items:center;padding-top:5rem;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,#0F172A 0%,#1E3A5F 100%);z-index:0}
+.hero-dots{position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,0.04) 1px,transparent 1px);background-size:28px 28px}
+.hero-content{position:relative;z-index:2;color:#fff;width:100%}
+.hero-tag{display:inline-block;font-size:.75rem;text-transform:uppercase;letter-spacing:.15em;color:var(--accent);font-weight:600;margin-bottom:1rem;border:1px solid rgba(6,182,212,0.25);padding:.35rem 1rem;border-radius:999px}
+.hero h1{font-family:var(--font-display);font-size:clamp(2.2rem,6vw,5rem);font-weight:800;line-height:1.05;letter-spacing:-.02em}
+.hero h1 .outline{color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,0.3)}
+.hero p{font-size:1.05rem;color:rgba(255,255,255,0.6);max-width:550px;margin-top:1.25rem;line-height:1.7}
+.hero-features{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.5rem}
+.hero-features span{font-size:.75rem;padding:.25rem .75rem;border-radius:999px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);color:rgba(255,255,255,0.5)}
+.hero-services{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem}
+.hero-services .pill{font-size:.8rem;padding:.35rem 1rem;border-radius:999px;background:rgba(6,182,212,0.1);color:var(--accent);border:1px solid rgba(6,182,212,0.2);font-weight:500}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2.5rem}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.8rem;border-radius:999px;font-weight:600;font-size:.9rem;transition:all .25s;border:none;cursor:pointer;font-family:var(--font-body)}
+.btn-primary{background:var(--secondary);color:#fff}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(37,99,235,0.3)}
+.btn-wa{background:#25d366;color:#fff}
+.btn-wa:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(37,211,102,0.3)}
+.btn-outline{background:transparent;color:var(--fg);border:1.5px solid var(--border)}
+.btn-outline:hover{border-color:var(--accent)}
+.section-pad{padding:5rem 0}
+@media(min-width:48rem){.section-pad{padding:6rem 0}}
+.section-label{font-family:var(--font-display);font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);margin-bottom:.5rem;display:inline-block}
+.section-head{font-family:var(--font-display);font-size:clamp(1.6rem,3.5vw,2.6rem);font-weight:700;margin-bottom:.5rem}
+.section-desc{color:var(--muted);max-width:560px;line-height:1.7;font-size:.95rem;margin-bottom:2.5rem}
+.cap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+@media(max-width:64rem){.cap-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:40rem){.cap-grid{grid-template-columns:1fr}}
+.cap-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:2rem;transition:all .3s;position:relative;overflow:hidden}
+.cap-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-3px)}
+.cap-card .num{font-family:var(--font-display);font-size:3rem;font-weight:800;color:rgba(6,182,212,0.06);position:absolute;top:.5rem;right:1rem;line-height:1}
+.cap-card .icon{font-size:2rem;margin-bottom:1rem;display:block}
+.cap-card h3{font-size:1.1rem;margin-bottom:.5rem}
+.cap-card p{color:var(--muted);font-size:.85rem;line-height:1.6}
+.adv-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;overflow:hidden;border:1px solid var(--border);background:var(--border);border-radius:var(--radius)}
+@media(max-width:64rem){.adv-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:40rem){.adv-grid{grid-template-columns:1fr}}
+.adv-card{background:var(--card);padding:2rem 1.5rem;text-align:center;transition:all .3s}
+.adv-card:hover{background:var(--bg)}
+.adv-card .num{font-family:var(--font-display);font-size:.75rem;font-weight:600;color:var(--accent);margin-bottom:.75rem;display:inline-block;padding:.2rem .6rem;border-radius:999px;background:rgba(6,182,212,0.08)}
+.adv-card .icon{font-size:1.75rem;margin-bottom:.75rem;display:block}
+.adv-card h3{font-size:.95rem;margin-bottom:.35rem}
+.adv-card .val{font-size:.8rem;color:var(--muted);margin-bottom:.25rem}
+.adv-card .pct{font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:var(--secondary)}
+.process-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;overflow:hidden;border:1px solid var(--border);background:var(--border);border-radius:var(--radius)}
+@media(max-width:64rem){.process-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:40rem){.process-grid{grid-template-columns:1fr}}
+.process-step{background:var(--card);padding:2rem 1.5rem;text-align:center;transition:all .3s}
+.process-step:hover{background:var(--bg)}
+.process-step .step{font-family:var(--font-display);font-size:1.75rem;font-weight:800;color:rgba(6,182,212,0.1);line-height:1;margin-bottom:.5rem}
+.process-step h3{font-size:.95rem;margin-bottom:.35rem}
+.process-step p{color:var(--muted);font-size:.8rem;line-height:1.5}
+.offer-wrap{background:linear-gradient(135deg,#0F172A,#1E3A5F);border-radius:var(--radius);padding:3rem;color:#fff;position:relative;overflow:hidden}
+.offer-wrap .dots{position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:24px 24px}
+.offer-wrap .content{position:relative;z-index:2}
+.offer-wrap .badge{display:inline-block;font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;background:rgba(6,182,212,0.15);color:var(--accent);padding:.3rem .8rem;border-radius:999px;margin-bottom:1rem;font-weight:600}
+.offer-wrap h2{font-family:var(--font-display);font-size:clamp(1.5rem,3vw,2.2rem);margin-bottom:.35rem}
+.offer-wrap .price{font-family:var(--font-display);font-size:clamp(2rem,4vw,3.5rem);font-weight:800;color:var(--accent);margin:.75rem 0}
+.offer-wrap .note{font-size:.8rem;color:rgba(255,255,255,0.4);margin-bottom:1.5rem}
+.offer-features{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.08);border-radius:var(--radius);margin-bottom:2rem}
+@media(max-width:64rem){.offer-features{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:40rem){.offer-features{grid-template-columns:1fr}}
+.offer-feat{background:rgba(255,255,255,0.03);padding:1.25rem;text-align:center}
+.offer-feat .of-num{font-size:.65rem;color:rgba(255,255,255,0.3);font-weight:600;margin-bottom:.35rem}
+.offer-feat h4{font-size:.85rem;margin-bottom:.15rem}
+.offer-feat p{font-size:.75rem;color:rgba(255,255,255,0.5)}
+.tech-list{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.5rem 0}
+.tech-list span{font-size:.75rem;padding:.3rem .7rem;border-radius:999px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);color:rgba(255,255,255,0.5)}
+.tech-list span::before{content:'\2713 ';color:var(--accent)}
+.scroll-wrap{overflow:hidden;padding:1.5rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.scroll-track{display:flex;gap:3rem;animation:scrollX 30s linear infinite;width:max-content}
+.scroll-track span{font-size:clamp(1rem,2.5vw,1.5rem);font-weight:600;white-space:nowrap;color:var(--muted);display:flex;align-items:center;gap:3rem}
+.scroll-track span::after{content:'\2726';color:var(--accent);font-size:.6rem}
+@keyframes scrollX{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.big-scroll{overflow:hidden;padding:2rem 0}
+.big-track{display:flex;gap:4rem;animation:scrollX 40s linear infinite;width:max-content}
+.big-track span{font-size:clamp(3rem,10vw,10rem);font-weight:900;white-space:nowrap;color:rgba(6,182,212,0.04);font-family:var(--font-display);letter-spacing:-.03em}
+.form-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:2.5rem;box-shadow:var(--shadow-lg)}
+.form-group{margin-bottom:1.25rem}
+.form-group label{display:block;font-size:.8rem;font-weight:600;margin-bottom:.35rem;color:var(--fg)}
+.form-group input,.form-group textarea,.form-group select{width:100%;padding:.7rem 1rem;border:1.5px solid var(--border);border-radius:8px;font-family:var(--font-body);font-size:.9rem;color:var(--fg);transition:border-color .2s;outline:none;background:var(--bg)}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--accent)}
+.form-group textarea{resize:vertical;min-height:80px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:40rem){.form-row{grid-template-columns:1fr}}
+.pricing-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;overflow:hidden;border:1px solid var(--border);background:var(--border);border-radius:var(--radius)}
+@media(max-width:64rem){.pricing-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:40rem){.pricing-grid{grid-template-columns:1fr}}
+.pricing-card{background:var(--card);padding:2rem;transition:all .3s;position:relative}
+.pricing-card:hover{background:var(--bg)}
+.pricing-card.featured{border:2px solid var(--accent)}
+.pricing-card.featured::after{content:'POPULAR';position:absolute;top:.75rem;right:.75rem;font-size:.6rem;font-weight:700;letter-spacing:.1em;background:var(--accent);color:#fff;padding:.2rem .6rem;border-radius:999px}
+.pricing-card .pcat{font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);font-weight:600;margin-bottom:.35rem}
+.pricing-card h3{font-size:1.1rem;margin-bottom:.5rem}
+.pricing-card .price{font-family:var(--font-display);font-size:1.75rem;font-weight:700;color:var(--primary);margin-bottom:.75rem}
+.pricing-card .price small{font-size:.75rem;font-weight:400;color:var(--muted)}
+.pricing-card ul{list-style:none;margin-bottom:1.25rem}
+.pricing-card ul li{font-size:.8rem;color:var(--muted);padding:.3rem 0;display:flex;align-items:center;gap:.5rem}
+.pricing-card ul li::before{content:'\2713';color:var(--accent);font-weight:700}
+.pricing-card .btn{width:100%;justify-content:center}
+.maint-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+@media(max-width:48rem){.maint-grid{grid-template-columns:1fr}}
+.maint-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:2rem;transition:all .3s}
+.maint-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-3px)}
+.maint-card .mcat{font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);font-weight:600}
+.maint-card h3{font-size:1.1rem;margin:.5rem 0}
+.maint-card .price{font-family:var(--font-display);font-size:2rem;font-weight:700;color:var(--primary);margin-bottom:.75rem}
+.maint-card .price small{font-size:.8rem;font-weight:400;color:var(--muted)}
+.maint-card ul{list-style:none;margin-bottom:1.25rem}
+.maint-card ul li{font-size:.8rem;color:var(--muted);padding:.3rem 0;display:flex;align-items:center;gap:.5rem}
+.maint-card ul li::before{content:'\2713';color:var(--accent);font-weight:700}
+.contact-info-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;overflow:hidden;border:1px solid var(--border);background:var(--border);border-radius:var(--radius)}
+.contact-info-item{background:var(--card);padding:1.5rem}
+.contact-info-item .lbl{font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);font-weight:600;margin-bottom:.15rem}
+.contact-info-item .val{font-size:.9rem}
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;overflow:hidden;border:1px solid var(--border);background:var(--border);border-radius:var(--radius)}
+@media(max-width:48rem){.steps-grid{grid-template-columns:repeat(2,1fr)}}
+.step-card{background:var(--card);padding:1.5rem;text-align:center}
+.step-card .snum{font-family:var(--font-display);font-size:1.25rem;font-weight:700;color:var(--accent);margin-bottom:.35rem}
+.step-card h4{font-size:.9rem;margin-bottom:.2rem}
+.step-card p{font-size:.75rem;color:var(--muted)}
+.footer{background:var(--primary);color:rgba(255,255,255,0.7);padding:3rem 0 1.5rem;margin-top:3rem}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:2rem}
+@media(max-width:48rem){.footer-grid{grid-template-columns:1fr 1fr;gap:1.5rem}}
+@media(max-width:40rem){.footer-grid{grid-template-columns:1fr}}
+.footer-brand .flogo{display:flex;align-items:center;gap:.5rem;color:#fff;font-family:var(--font-display);font-weight:700;font-size:1.1rem}
+.footer-brand p{font-size:.82rem;line-height:1.6;margin-top:.75rem;max-width:300px}
+.footer-col h4{color:#fff;font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:1rem}
+.footer-col a{display:block;font-size:.82rem;padding:.3rem 0;transition:color .2s}
+.footer-col a:hover{color:var(--accent)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.06);margin-top:2rem;padding-top:1.25rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.75rem;font-size:.78rem}
+.agree-form{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:2.5rem;box-shadow:var(--shadow-lg)}
+.agree-form h3{font-family:var(--font-display);font-size:1.1rem;margin-bottom:1.25rem;padding-bottom:.75rem;border-bottom:1px solid var(--border)}
+.agree-terms{background:var(--bg);border-radius:8px;padding:1.25rem;margin:1rem 0;max-height:200px;overflow-y:auto;font-size:.82rem;color:var(--muted);line-height:1.7}
+.agree-terms::-webkit-scrollbar{width:4px}
+.agree-terms::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
+.agree-check{display:flex;align-items:center;gap:.75rem;margin:1rem 0;cursor:pointer}
+.agree-check input{width:18px;height:18px;accent-color:var(--accent);cursor:pointer}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+.wa-float{position:fixed;bottom:1.5rem;right:1.5rem;z-index:99;width:52px;height:52px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.3);transition:all .3s;color:#fff}
+.wa-float:hover{transform:scale(1.08)}
+.wa-float svg{width:24px;height:24px;fill:currentColor}
+.toast{position:fixed;bottom:5rem;right:1.5rem;z-index:200;padding:.75rem 1.5rem;border-radius:999px;background:var(--card);border:1px solid var(--border);color:var(--fg);font-size:.85rem;box-shadow:var(--shadow-lg);opacity:0;transform:translateY(20px);transition:all .3s;pointer-events:none}
+.toast.show{opacity:1;transform:translateY(0)}
+.page-nav{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2rem}
+.page-nav a{font-size:.82rem;font-weight:500;color:var(--muted);padding:.35rem 1rem;border-radius:999px;border:1px solid var(--border);transition:all .2s}
+.page-nav a:hover,.page-nav a.active{border-color:var(--accent);color:var(--accent)}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+</style>
+</head>
+<body>
+<a href="https://wa.me/917989950973?text=Hi%20StudioZar%2C%20I%20need%20a%20website%2Fapp!" class="wa-float" aria-label="WhatsApp" target="_blank" rel="noopener">
+<svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+<div class="toast" id="toast"></div>
+<header class="header">
+<div class="container header-inner">
+<div class="header-left">
+<img src="images/photo1.png" alt="StudioZar" />
+<div>
+<div class="brand">StudioZar</div>
+<div class="tagline">Design • Develop • Grow</div>
+</div>
+</div>
+<div class="header-right" id="nav">
+<a href="#home">Home</a>
+<a href="#services">Services</a>
+<a href="#pricing">Pricing</a>
+<a href="#contact">Contact</a>
+<a href="#home" class="cta-btn" onclick="event.preventDefault();window.open('https://wa.me/917989950973?text='+encodeURIComponent('Hi%20StudioZar%2C%20I%20want%20to%20start%20my%20project%21'))">Let's Talk</a>
+<button class="mobile-toggle" id="mToggle" aria-label="Menu">
+<span></span><span></span><span></span>
+</button>
+</div>
+</div>
+</header>
+<section id="home" class="hero">
+<div class="hero-bg"></div>
+<div class="hero-dots"></div>
+<div class="container hero-content">
+<div class="hero-tag">✦ Premium Digital Agency</div>
+<h1>We Create.<br /><span class="outline">You Grow.</span></h1>
+<p>From stunning websites to powerful mobile apps — we design, develop, and scale your digital presence. Your vision, our expertise.</p>
+<div class="hero-features">
+<span>🚀 AI-Powered</span>
+<span>📱 Mobile First</span>
+<span>⚡ Performance Optimized</span>
+<span>🔒 Secure by Default</span>
+</div>
+<div class="hero-services">
+<span class="pill">Websites</span>
+<span class="pill">Mobile Apps</span>
+<span class="pill">UI/UX Design</span>
+<span class="pill">AI Integration</span>
+<span class="pill">SEO</span>
+</div>
+<div class="hero-actions">
+<a href="https://wa.me/917989950973?text=Hi%20StudioZar%2C%20I%20want%20to%20start%20my%20project%21" target="_blank" rel="noopener" class="btn btn-wa">💬 Start Your Project</a>
+<a href="#services" class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,0.2)">Explore Services ↓</a>
+</div>
+</div>
+</section>
+<section class="section-pad" id="capabilities">
+<div class="container">
+<span class="section-label">✦ Capabilities</span>
+<h2 class="section-head">What We Do Best</h2>
+<p class="section-desc">We combine design thinking with cutting-edge technology to deliver digital products that drive real business growth.</p>
+<div class="cap-grid">
+<div class="cap-card reveal">
+<span class="num">01</span>
+<span class="icon">🌐</span>
+<h3>Web Development</h3>
+<p>Responsive, blazing-fast websites and web apps built with modern frameworks. From landing pages to complex platforms.</p>
+</div>
+<div class="cap-card reveal d1">
+<span class="num">02</span>
+<span class="icon">📱</span>
+<h3>Mobile Apps</h3>
+<p>Native-feeling mobile applications for iOS and Android. Cross-platform solutions that reach every user. Flutter, React Native.</p>
+</div>
+<div class="cap-card reveal d2">
+<span class="num">03</span>
+<span class="icon">🎨</span>
+<h3>UI/UX Design</h3>
+<p>Human-centered design that converts. We craft intuitive, beautiful interfaces backed by user research and data.</p>
+</div>
+<div class="cap-card reveal d3">
+<span class="num">04</span>
+<span class="icon">🤖</span>
+<h3>AI Integration</h3>
+<p>Smart chatbots, predictive analytics, automation. We infuse AI into your products to make them smarter and faster.</p>
+</div>
+<div class="cap-card reveal d4">
+<span class="num">05</span>
+<span class="icon">📈</span>
+<h3>SEO & Growth</h3>
+<p>Search-first strategy, technical SEO, content optimization. We make sure your audience finds you — not your competitors.</p>
+</div>
+<div class="cap-card reveal">
+<span class="num">06</span>
+<span class="icon">⚙️</span>
+<h3>Maintenance & Support</h3>
+<p>24/7 monitoring, updates, security patches, and performance optimization. We keep your digital assets running smoothly.</p>
+</div>
+</div>
+</div>
+</section>
+<div class="scroll-wrap">
+<div class="scroll-track">
+<span>Design Thinking</span><span>Agile Development</span><span>Pixel Perfect</span><span>Performance First</span><span>AI Native</span><span>Mobile First</span><span>User Centered</span><span>Data Driven</span>
+</div>
+</div>
+<section class="section-pad" id="advantage">
+<div class="container">
+<span class="section-label">✦ StudioZar Advantage</span>
+<h2 class="section-head">Why Businesses Choose Us</h2>
+<p class="section-desc">We don't just build digital products — we build partnerships. Here's what sets us apart.</p>
+<div class="adv-grid">
+<div class="adv-card reveal">
+<div class="num">01</div>
+<div class="icon">⚡</div>
+<h3>Speed to Market</h3>
+<div class="val">Average delivery</div>
+<div class="pct">2-4 Weeks</div>
+</div>
+<div class="adv-card reveal d1">
+<div class="num">02</div>
+<div class="icon">🎯</div>
+<h3>Client Retention</h3>
+<div class="val">Repeat business</div>
+<div class="pct">94%</div>
+</div>
+<div class="adv-card reveal d2">
+<div class="num">03</div>
+<div class="icon">🌍</div>
+<h3>Global Reach</h3>
+<div class="val">Clients worldwide</div>
+<div class="pct">12+ Countries</div>
+</div>
+<div class="adv-card reveal d3">
+<div class="num">04</div>
+<div class="icon">🏆</div>
+<h3>Projects Delivered</h3>
+<div class="val">Since inception</div>
+<div class="pct">150+</div>
+</div>
+<div class="adv-card reveal d4">
+<div class="num">05</div>
+<div class="icon">💎</div>
+<h3>Quality First</h3>
+<div class="val">NPS Score</div>
+<div class="pct">92</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section-pad" style="padding-top:0">
+<div class="container">
+<span class="section-label">✦ Our Process</span>
+<h2 class="section-head">How We Bring Ideas to Life</h2>
+<p class="section-desc">A streamlined, transparent process from concept to launch — with you involved every step of the way.</p>
+<div class="process-grid">
+<div class="process-step reveal">
+<div class="step">01</div>
+<h3>Discovery</h3>
+<p>We dive deep into your business, audience, and goals to define the perfect strategy.</p>
+</div>
+<div class="process-step reveal d1">
+<div class="step">02</div>
+<h3>Design</h3>
+<p>Wireframes, prototypes, and stunning visual designs crafted with your feedback.</p>
+</div>
+<div class="process-step reveal d2">
+<div class="step">03</div>
+<h3>Develop</h3>
+<p>Clean, scalable code written by expert developers. Agile sprints with weekly demos.</p>
+</div>
+<div class="process-step reveal d3">
+<div class="step">04</div>
+<h3>Launch</h3>
+<p>Rigorous testing, deployment, and optimization. We don't ship until it's perfect.</p>
+</div>
+<div class="process-step reveal d4">
+<div class="step">05</div>
+<h3>Grow</h3>
+<p>Post-launch support, analytics, and continuous improvement to maximize your ROI.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="section-pad" style="padding-top:0">
+<div class="container">
+<div class="offer-wrap">
+<div class="dots"></div>
+<div class="content">
+<div class="badge">🔥 Limited Time Offer</div>
+<h2>Full Website Package</h2>
+<p style="color:rgba(255,255,255,0.5);font-size:.9rem">Complete website design + development + hosting setup</p>
+<div class="price">₹20,000</div>
+<p class="note">Regular price ₹49,999 — Save 60%</p>
+<div class="offer-features">
+<div class="offer-feat"><div class="of-num">✓</div><h4>5 Pages</h4><p>Custom designed</p></div>
+<div class="offer-feat"><div class="of-num">✓</div><h4>Mobile Responsive</h4><p>All devices</p></div>
+<div class="offer-feat"><div class="of-num">✓</div><h4>SEO Optimized</h4><p>Google friendly</p></div>
+<div class="offer-feat"><div class="of-num">✓</div><h4>Contact Form</h4><p>WhatsApp integration</p></div>
+<div class="offer-feat"><div class="of-num">✓</div><h4>Free Hosting</h4><p>1 year included</p></div>
+</div>
+<a href="https://wa.me/917989950973?text=Hi%20StudioZar%2C%20I%20want%20the%20%F0%9F%94%A5%20Limited%20Time%20Offer%20-%20Full%20Website%20Package%20at%20%E2%82%B920%2C000%21" target="_blank" rel="noopener" class="btn btn-wa">💬 Claim This Offer</a>
+</div>
+</div>
+</div>
+</section>
+<div class="big-scroll">
+<div class="big-track">
+<span>StudioZar</span><span>StudioZar</span><span>StudioZar</span><span>StudioZar</span><span>StudioZar</span>
+</div>
+</div>
+<section id="services" class="section-pad">
+<div class="container">
+<div class="page-nav">
+<a href="#home">Home</a>
+<a href="#services" class="active">Services</a>
+<a href="#pricing">Pricing</a>
+<a href="#contact">Contact</a>
+</div>
+<span class="section-label">✦ Our Services</span>
+<h2 class="section-head">Everything You Need to Succeed Online</h2>
+<p class="section-desc">From strategy to execution — we offer end-to-end digital services tailored to your business goals.</p>
+
+<div class="cap-grid">
+<div class="cap-card reveal">
+<span class="num">01</span>
+<span class="icon">🌐</span>
+<h3>Custom Website Design</h3>
+<p>Stand out with a unique, professionally designed website that reflects your brand identity. Tailored layouts, custom graphics, and pixel-perfect UI.</p>
+</div>
+<div class="cap-card reveal d1">
+<span class="num">02</span>
+<span class="icon">🛒</span>
+<h3>E-Commerce Solutions</h3>
+<p>Sell online with a powerful, conversion-optimized online store. Product management, cart, checkout, and secure payments included.</p>
+</div>
+<div class="cap-card reveal d2">
+<span class="num">03</span>
+<span class="icon">📱</span>
+<h3>Mobile App Development</h3>
+<p>Cross-platform mobile apps using Flutter & React Native. Native performance with a single codebase for iOS and Android.</p>
+</div>
+<div class="cap-card reveal d3">
+<span class="num">04</span>
+<span class="icon">🎨</span>
+<h3>UI/UX Redesign</h3>
+<p>Transform your existing product with a data-driven redesign. Higher engagement, lower bounce rates, better conversions.</p>
+</div>
+<div class="cap-card reveal d4">
+<span class="num">05</span>
+<span class="icon">🤖</span>
+<h3>AI Chatbots</h3>
+<p>24/7 customer support with intelligent chatbots. GPT-powered, trained on your business data, deployed on website & WhatsApp.</p>
+</div>
+<div class="cap-card reveal">
+<span class="num">06</span>
+<span class="icon">📈</span>
+<h3>Digital Marketing</h3>
+<p>SEO, social media, email campaigns, and paid ads. Data-driven strategies to grow your reach and revenue.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="pricing" class="section-pad">
+<div class="container">
+<div class="page-nav">
+<a href="#home">Home</a>
+<a href="#services">Services</a>
+<a href="#pricing" class="active">Pricing</a>
+<a href="#contact">Contact</a>
+</div>
+<span class="section-label">✦ Pricing</span>
+<h2 class="section-head">Transparent Plans for Every Stage</h2>
+<p class="section-desc">No hidden fees, no surprises. Choose a plan that fits your budget and scale up as you grow.</p>
+
+<div class="pricing-grid">
+<div class="pricing-card reveal">
+<div class="pcat">Starter</div>
+<h3>Basic Website</h3>
+<div class="price">₹15,000 <small>one-time</small></div>
+<ul>
+<li>1 Page website</li>
+<li>Mobile responsive</li>
+<li>Contact form</li>
+<li>WhatsApp integration</li>
+<li>Basic SEO</li>
+<li>Free hosting (6 months)</li>
+</ul>
+<a href="https://wa.me/917989950973?text=Hi%20StudioZar%2C%20I'm%20interested%20in%20the%20Starter%20-%20Basic%20Website%20(%E2%82%B915%2C000)%20plan" target="_blank" rel="noopener" class="btn btn-primary">Get Started</a>
+</div>
+<div class="pricing-card featured reveal d1">
+<div class="pcat">Popular</div>
+<h3>Business Pro</h3>
+<div class="price">₹35,000 <small>one-time</small></div>
+<ul>
+<li>5 Pages website</li>
+<li>Advanced animations</li>
+<li>Blog/CMS integration</li>
+<li>SEO optimization</li>
+<li>WhatsApp & Email forms</li>
+<li>Free hosting (1 year)</li>
+<li>Priority support</li>
+</ul>
+<a href="https://wa.me/917989950973?text=Hi%20StudioZar%2C%20I'm%20interested%20in%20the%20Popular%20-%20Business%20Pro%20(%E2%82%B935%2C000)%20plan" target="_blank" rel="noopener" class="btn btn-wa">Get Started</a>
+</div>
+<div class="pricing-card reveal d2">
+<div class="pcat">Premium</div>
+<h3>E-Commerce</h3>
+<div class="price">₹65,000 <small>one-time</small></div>
+<ul>
+<li>Full online store</li>
+<li>Product management</li>
+<li>Payment gateway</li>
+<li>Order management</li>
+<li>Advanced SEO</li>
+<li>Free hosting (1 year)</li>
+<li>30-day support</li>
+</ul>
+<a href="https://wa.me/917989950973?text=Hi%20StudioZar%2C%20I'm%20interested%20in%20the%20Premium%20-%20E-Commerce%20(%E2%82%B965%2C000)%20plan" target="_blank" rel="noopener" class="btn btn-primary">Get Started</a>
+</div>
+<div class="pricing-card reveal d3">
+<div class="pcat">Enterprise</div>
+<h3>Custom Solution</h3>
+<div class="price">Custom <small>quote</small></div>
+<ul>
+<li>Web + Mobile app</li>
+<li>Custom features</li>
+<li>Third-party integrations</li>
+<li>AI/ML capabilities</li>
+<li>Dedicated team</li>
+<li>24/7 support</li>
+<li>SLA guaranteed</li>
+</ul>
+<a href="https://wa.me/917989950973?text=Hi%20StudioZar%2C%20I'm%20interested%20in%20the%20Enterprise%20-%20Custom%20Solution%20plan" target="_blank" rel="noopener" class="btn btn-primary">Get Quote</a>
+</div>
+</div>
+</div>
+</section>
+<section class="section-pad" style="padding-top:0">
+<div class="container">
+<span class="section-label">✦ Maintenance Plans</span>
+<h2 class="section-head">Keep Your Site Running Smoothly</h2>
+<p class="section-desc">Ongoing support, updates, and optimization to ensure your digital presence stays fast, secure, and up-to-date.</p>
+<div class="maint-grid">
+<div class="maint-card reveal">
+<div class="mcat">Monthly</div>
+<h3>Basic Care</h3>
+<div class="price">₹2,999 <small>/mo</small></div>
+<ul>
+<li>Monthly backups</li>
+<li>Security updates</li>
+<li>Uptime monitoring</li>
+<li>1 hour revision</li>
+<li>Email support</li>
+</ul>
+<a href="https://wa.me/917989950973?text=Hi%20StudioZar%2C%20I'm%20interested%20in%20the%20Basic%20Care%20(%E2%82%B92%2C999%2Fmo)%20maintenance%20plan" target="_blank" rel="noopener" class="btn btn-outline">Subscribe</a>
+</div>
+<div class="maint-card featured reveal d1" style="border:2px solid var(--accent);position:relative">
+<div style="position:absolute;top:.75rem;right:.75rem;font-size:.6rem;font-weight:700;letter-spacing:.1em;background:var(--accent);color:#fff;padding:.2rem .6rem;border-radius:999px">RECOMMENDED</div>
+<div class="mcat">Monthly</div>
+<h3>Growth Plan</h3>
+<div class="price">₹5,999 <small>/mo</small></div>
+<ul>
+<li>Weekly backups</li>
+<li>Security & updates</li>
+<li>Performance monitoring</li>
+<li>5 hours revision</li>
+<li>Content updates</li>
+<li>Priority support</li>
+<li>Monthly analytics report</li>
+</ul>
+<a href="https://wa.me/917989950973?text=Hi%20StudioZar%2C%20I'm%20interested%20in%20the%20Growth%20Plan%20(%E2%82%B95%2C999%2Fmo)%20maintenance%20plan" target="_blank" rel="noopener" class="btn btn-wa">Subscribe</a>
+</div>
+<div class="maint-card reveal d2">
+<div class="mcat">Monthly</div>
+<h3>Enterprise</h3>
+<div class="price">₹12,999 <small>/mo</small></div>
+<ul>
+<li>Daily backups</li>
+<li>24/7 monitoring</li>
+<li>Unlimited revisions</li>
+<li>SEO optimization</li>
+<li>Content creation</li>
+<li>Dedicated account manager</li>
+<li>Quarterly strategy call</li>
+</ul>
+<a href="https://wa.me/917989950973?text=Hi%20StudioZar%2C%20I'm%20interested%20in%20the%20Enterprise%20(%E2%82%B912%2C999%2Fmo)%20maintenance%20plan" target="_blank" rel="noopener" class="btn btn-outline">Subscribe</a>
+</div>
+</div>
+</div>
+</section>
+<section id="contact" class="section-pad">
+<div class="container">
+<div class="page-nav">
+<a href="#home">Home</a>
+<a href="#services">Services</a>
+<a href="#pricing">Pricing</a>
+<a href="#contact" class="active">Contact</a>
+</div>
+<span class="section-label">✦ Get In Touch</span>
+<h2 class="section-head">Let's Build Something Great Together</h2>
+<p class="section-desc">Have a project in mind? Fill out the form below and we'll get back to you within 24 hours. Or reach out directly.</p>
+
+<div class="contact-info-grid" style="margin-bottom:2rem">
+<div class="contact-info-item">
+<div class="lbl">💬 WhatsApp</div>
+<div class="val"><a href="https://wa.me/917989950973" target="_blank" rel="noopener">+91 7989950973</a></div>
+</div>
+<div class="contact-info-item">
+<div class="lbl">📧 Email</div>
+<div class="val"><a href="mailto:chandradigitalai@gmail.com">chandradigitalai@gmail.com</a></div>
+</div>
+<div class="contact-info-item">
+<div class="lbl">📍 Address</div>
+<div class="val">4-1-106, Patnool Street, Tirupati</div>
+</div>
+<div class="contact-info-item">
+<div class="lbl">👤 Owner</div>
+<div class="val">Chandra Nandipati</div>
+</div>
+</div>
+
+<div class="form-card">
+<form id="contactForm">
+<div class="form-row">
+<div class="form-group">
+<label for="name">Full Name *</label>
+<input type="text" id="name" required placeholder="John Doe" />
+</div>
+<div class="form-group">
+<label for="email">Email Address *</label>
+<input type="email" id="email" required placeholder="john@example.com" />
+</div>
+</div>
+<div class="form-group">
+<label for="service">Service Needed *</label>
+<select id="service" required>
+<option value="">Select a service...</option>
+<option value="Website Design">Website Design</option>
+<option value="Mobile App">Mobile App</option>
+<option value="E-Commerce">E-Commerce Store</option>
+<option value="UI/UX Design">UI/UX Design</option>
+<option value="AI Chatbot">AI Chatbot</option>
+<option value="SEO / Marketing">SEO / Digital Marketing</option>
+<option value="Maintenance">Website Maintenance</option>
+<option value="Other">Other</option>
+</select>
+</div>
+<div class="form-group">
+<label for="budget">Budget Range</label>
+<select id="budget">
+<option value="">Select budget...</option>
+<option value="₹15,000 - ₹30,000">₹15,000 - ₹30,000</option>
+<option value="₹30,000 - ₹50,000">₹30,000 - ₹50,000</option>
+<option value="₹50,000 - ₹1,00,000">₹50,000 - ₹1,00,000</option>
+<option value="₹1,00,000+">₹1,00,000+</option>
+<option value="Not Sure">Not Sure</option>
+</select>
+</div>
+<div class="form-group">
+<label for="message">Project Details *</label>
+<textarea id="message" required placeholder="Tell us about your project, goals, timeline..." rows="4"></textarea>
+</div>
+<button type="submit" class="btn btn-wa" style="width:100%;justify-content:center;font-size:1rem;padding:1rem">💬 Send via WhatsApp</button>
+</form>
+</div>
+
+<div style="margin-top:3rem">
+<span class="section-label">✦ Quick Steps</span>
+<h2 class="section-head" style="font-size:clamp(1.2rem,2.5vw,1.8rem)">How to Get Started</h2>
+<div class="steps-grid" style="margin-top:1.5rem">
+<div class="step-card reveal"><div class="snum">1</div><h4>Tell Us Your Idea</h4><p>Share your vision, requirements, and timeline.</p></div>
+<div class="step-card reveal d1"><div class="snum">2</div><h4>Get a Proposal</h4><p>We'll send you a detailed plan and quote within 24 hrs.</p></div>
+<div class="step-card reveal d2"><div class="snum">3</div><h4>Approve & Start</h4><p>Confirm the proposal and we begin development.</p></div>
+<div class="step-card reveal d3"><div class="snum">4</div><h4>Launch & Grow</h4><p>We deliver, optimize, and support your growth.</p></div>
+</div>
+</div>
+</div>
+</section>
+<section class="section-pad" style="padding-top:0">
+<div class="container">
+<span class="section-label">✦ Service Agreement</span>
+<h2 class="section-head">Terms of Engagement</h2>
+<p class="section-desc">Please review and accept our service agreement to proceed with your project. This ensures clarity and transparency for both parties.</p>
+
+<div class="form-card agree-form">
+<h3>📄 StudioZar Service Agreement</h3>
+<p style="font-size:.85rem;color:var(--muted);margin-bottom:1rem">By submitting this form, you agree to the following terms:</p>
+<div class="agree-terms">
+<strong>1. Scope of Work</strong><br />
+The scope of work will be defined in the project proposal shared via WhatsApp/Email. Any additional features outside the agreed scope will be charged separately.<br /><br />
+<strong>2. Payment Terms</strong><br />
+50% advance payment is required to start the project. The remaining 50% is due upon completion and before final delivery. Payments are non-refundable once work has commenced.<br /><br />
+<strong>3. Timeline</strong><br />
+Estimated delivery timeline will be shared in the proposal. Delays caused by client feedback or third-party dependencies will extend the timeline accordingly.<br /><br />
+<strong>4. Revisions</strong><br />
+Up to 3 rounds of revisions are included in the quoted price. Additional revisions will be billed at ₹1,000 per round.<br /><br />
+<strong>5. Ownership & IP</strong><br />
+Full ownership of the final delivered product is transferred to the client upon full payment. StudioZar retains the right to display the work in its portfolio.<br /><br />
+<strong>6. Confidentiality</strong><br />
+All client information, data, and project details are kept strictly confidential and will not be shared with third parties.<br /><br />
+<strong>7. Support</strong><br />
+30 days of basic support (bug fixes) is included post-launch. Feature enhancements and ongoing maintenance are covered under separate maintenance plans.<br /><br />
+<strong>8. Termination</strong><br />
+Either party may terminate the agreement with 7 days written notice. In case of termination, payment for completed work is non-refundable.
+</div>
+
+<form id="agreementForm">
+<div class="form-row">
+<div class="form-group">
+<label for="agreeName">Full Name *</label>
+<input type="text" id="agreeName" required placeholder="Your full name" />
+</div>
+<div class="form-group">
+<label for="agreePhone">Phone / WhatsApp *</label>
+<input type="tel" id="agreePhone" required placeholder="+91 9876543210" />
+</div>
+</div>
+<div class="form-group">
+<label for="agreeProject">Project Description *</label>
+<textarea id="agreeProject" required placeholder="Brief description of your project..." rows="3"></textarea>
+</div>
+<div class="form-group">
+<label for="agreeBudget">Agreed Budget (₹)</label>
+<input type="text" id="agreeBudget" placeholder="e.g. 35,000" />
+</div>
+<label class="agree-check">
+<input type="checkbox" id="agreeCheck" required />
+<span style="font-size:.85rem">I have read and agree to the <strong>Service Agreement</strong> terms above. *</span>
+</label>
+<button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;font-size:1rem;padding:1rem">📩 Submit Agreement via WhatsApp</button>
+</form>
+</div>
+</div>
+</section>
+<footer class="footer">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-brand">
+<div class="flogo">
+<img src="images/photo1.png" style="height:1.8rem;width:auto;border-radius:4px" alt="Logo" />
+StudioZar
+</div>
+<p>Design • Develop • Grow — We help businesses build powerful digital products that drive growth. Based in Tirupati, serving clients worldwide.</p>
+</div>
+<div class="footer-col">
+<h4>Services</h4>
+<a href="#services">Web Development</a>
+<a href="#services">Mobile Apps</a>
+<a href="#services">UI/UX Design</a>
+<a href="#services">AI Integration</a>
+<a href="#services">SEO & Growth</a>
+<a href="#services">Maintenance</a>
+</div>
+<div class="footer-col">
+<h4>Quick Links</h4>
+<a href="#home">Home</a>
+<a href="#pricing">Pricing</a>
+<a href="#contact">Contact</a>
+<a href="https://wa.me/917989950973" target="_blank" rel="noopener">WhatsApp</a>
+<a href="mailto:chandradigitalai@gmail.com">Email Us</a>
+</div>
+<div class="footer-col">
+<h4>Contact</h4>
+<a href="https://wa.me/917989950973" target="_blank" rel="noopener">+91 7989950973</a>
+<a href="mailto:chandradigitalai@gmail.com">chandradigitalai@gmail.com</a>
+<a>4-1-106, Patnool Street</a>
+<a>Tirupati, India</a>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© 2026 StudioZar. All rights reserved.</span>
+<span>Crafted with 💡 by Chandra Nandipati</span>
+</div>
+</div>
+</footer>
+
+<script>
+// Mobile toggle
+const toggle = document.getElementById('mToggle');
+const nav = document.getElementById('nav');
+if (toggle) {
+toggle.addEventListener('click', function(e){
+e.stopPropagation();
+nav.classList.toggle('open');
+this.classList.toggle('active');
+});
+document.addEventListener('click', function(e){
+if (!nav.contains(e.target) && e.target !== toggle) {
+nav.classList.remove('open');
+toggle.classList.remove('active');
+}
+});
+}
+// Scroll reveal
+const observer = new IntersectionObserver((entries)=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add('visible');
+}
+});
+},{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+// Contact form -> WhatsApp
+document.getElementById('contactForm').addEventListener('submit',function(e){
+e.preventDefault();
+const n=this.name?.value||'';
+const em=this.email?.value||'';
+const sv=this.service?.value||'';
+const bg=this.budget?.value||'';
+const msg=this.message?.value||'';
+const text='Hi%20StudioZar%2C%0A%0A*New%20Project%20Inquiry*%0A%0AName%3A%20'+encodeURIComponent(n)+'%0AEmail%3A%20'+encodeURIComponent(em)+'%0AService%3A%20'+encodeURIComponent(sv)+'%0ABudget%3A%20'+encodeURIComponent(bg)+'%0A%0A*Message%3A*%0A'+encodeURIComponent(msg);
+window.open('https://wa.me/917989950973?text='+text,'_blank');
+showToast('✅ Redirecting to WhatsApp...');
+});
+// Agreement form -> WhatsApp
+document.getElementById('agreementForm').addEventListener('submit',function(e){
+e.preventDefault();
+const n=this.agreeName?.value||'';
+const ph=this.agreePhone?.value||'';
+const proj=this.agreeProject?.value||'';
+const bud=this.agreeBudget?.value||'';
+const agree=this.agreeCheck?.checked||false;
+if(!agree){showToast('⚠️ Please accept the Service Agreement terms.');return;}
+const text='Hi%20StudioZar%2C%0A%0A*New%20Service%20Agreement*%0A%0AName%3A%20'+encodeURIComponent(n)+'%0APhone%3A%20'+encodeURIComponent(ph)+'%0AProject%3A%20'+encodeURIComponent(proj)+'%0ABudget%3A%20%E2%82%B9'+encodeURIComponent(bud)+'%0A%0AI%20have%20read%20and%20agreed%20to%20the%20Service%20Agreement%20terms.';
+window.open('https://wa.me/917989950973?text='+text,'_blank');
+showToast('✅ Agreement submitted! Redirecting to WhatsApp...');
+});
+function showToast(t){
+const el=document.getElementById('toast');
+if(!el)return;
+el.textContent=t;el.classList.add('show');
+setTimeout(()=>el.classList.remove('show'),3500);
+}
+</script>
+</body>
+</html>

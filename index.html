@@ -1,0 +1,1592 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StudioZar — Design • Develop • Grow | Digital Agency</title>
+  <meta name="description" content="StudioZar is a premium digital marketing and web development agency. We help schools, doctors, gyms, startups, and local businesses grow with websites, SEO, branding, and AI marketing." />
+  <meta name="keywords" content="web development, digital marketing, SEO, branding, local SEO, website design, Google Ads, social media marketing, Tirupati" />
+  <meta name="author" content="Chandra Nandipati" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://studiozar.com" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="StudioZar — Design • Develop • Grow" />
+  <meta property="og:description" content="Premium digital marketing & web development agency. Helping businesses grow with modern websites, SEO, and AI-powered marketing." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://studiozar.com" />
+
+  <!-- Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "StudioZar",
+    "url": "https://studiozar.com",
+    "logo": "https://studiozar.com/images/photo1.png",
+    "description": "Digital marketing and web development agency",
+    "founder": { "@type": "Person", "name": "Chandra Nandipati" },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+91-7989950973",
+      "contactType": "sales",
+      "email": "chandradigitalai@gmail.com"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "4-1-106, Patnool Street",
+      "addressLocality": "Tirupati",
+      "addressCountry": "IN"
+    },
+    "sameAs": [
+      "https://linkedin.com/in/chandranandipati",
+      "https://instagram.com/studiozar",
+      "https://facebook.com/studiozar"
+    ]
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:5rem}
+    :root{
+      --primary:#0F172A;
+      --secondary:#2563EB;
+      --accent:#06B6D4;
+      --bg:#F8FAFC;
+      --fg:#1E293B;
+      --card-bg:#FFFFFF;
+      --card-border:rgba(15,23,42,0.08);
+      --muted:#94A3B8;
+      --muted-bg:#F1F5F9;
+      --shadow:0 1px 3px rgba(0,0,0,0.04),0 4px 16px rgba(0,0,0,0.04);
+      --shadow-lg:0 4px 24px rgba(0,0,0,0.06),0 12px 48px rgba(0,0,0,0.04);
+      --radius:12px;
+      --radius-sm:8px;
+      --font-display:'Space Grotesk',sans-serif;
+      --font-body:'Inter',sans-serif;
+      --nav-blur:rgba(248,250,252,0.8);
+      --logo-color:#0F172A;
+    }
+    [data-theme="dark"]{
+      --primary:#E2E8F0;
+      --secondary:#3B82F6;
+      --accent:#22D3EE;
+      --bg:#0B1120;
+      --fg:#E2E8F0;
+      --card-bg:#131C31;
+      --card-border:rgba(255,255,255,0.06);
+      --muted:#64748B;
+      --muted-bg:#1E293B;
+      --shadow:0 1px 3px rgba(0,0,0,0.3),0 4px 16px rgba(0,0,0,0.3);
+      --shadow-lg:0 4px 24px rgba(0,0,0,0.4),0 12px 48px rgba(0,0,0,0.3);
+      --nav-blur:rgba(11,17,32,0.85);
+      --logo-color:#F8FAFC;
+    }
+    body{
+      font-family:var(--font-body);
+      background:var(--bg);
+      color:var(--fg);
+      line-height:1.6;
+      transition:background 0.3s,color 0.3s;
+      overflow-x:hidden;
+    }
+    ::-webkit-scrollbar{width:6px}
+    ::-webkit-scrollbar-track{background:var(--bg)}
+    ::-webkit-scrollbar-thumb{background:var(--muted);border-radius:3px}
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1200px;margin:0 auto;padding:0 1.5rem}
+    @media(min-width:64rem){.container{padding:0 2rem}}
+
+    /* Type */
+    h1,h2,h3,h4{font-family:var(--font-display);font-weight:700;line-height:1.2}
+    .section-label{
+      font-family:var(--font-display);
+      font-size:0.8rem;
+      font-weight:600;
+      text-transform:uppercase;
+      letter-spacing:0.12em;
+      color:var(--accent);
+      margin-bottom:0.75rem;
+      display:inline-block;
+    }
+    .section-title{
+      font-size:clamp(1.75rem,4vw,3rem);
+      margin-bottom:0.75rem;
+    }
+    .section-desc{
+      color:var(--muted);
+      font-size:1.05rem;
+      max-width:580px;
+      line-height:1.7;
+    }
+    .section-pad{padding:5rem 0}
+    @media(min-width:48rem){.section-pad{padding:7rem 0}}
+
+    /* Nav */
+    .nav{
+      position:fixed;top:0;left:0;right:0;
+      z-index:1000;
+      padding:0.85rem 0;
+      background:var(--nav-blur);
+      backdrop-filter:blur(16px);
+      -webkit-backdrop-filter:blur(16px);
+      border-bottom:1px solid transparent;
+      transition:all 0.3s;
+    }
+    .nav.scrolled{border-color:var(--card-border);box-shadow:var(--shadow)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between}
+    .nav-logo{
+      display:flex;
+      align-items:center;
+      gap:0.6rem;
+      font-family:var(--font-display);
+      font-weight:700;
+      font-size:1.35rem;
+      color:var(--logo-color);
+    }
+    .nav-logo img{height:2.2rem;width:auto;border-radius:6px}
+    .nav-links{display:flex;gap:2rem;align-items:center}
+    .nav-links a{
+      font-size:0.875rem;
+      font-weight:500;
+      color:var(--muted);
+      transition:color 0.2s;
+      position:relative;
+    }
+    .nav-links a::after{
+      content:'';position:absolute;
+      bottom:-4px;left:0;
+      width:0;height:2px;
+      background:var(--accent);
+      transition:width 0.3s;
+      border-radius:2px;
+    }
+    .nav-links a:hover{color:var(--fg)}
+    .nav-links a:hover::after{width:100%}
+    .nav-right{display:flex;align-items:center;gap:1rem}
+    .theme-toggle{
+      background:none;border:none;
+      cursor:pointer;color:var(--muted);
+      padding:6px;border-radius:50%;
+      transition:all 0.2s;
+      display:flex;align-items:center;justify-content:center;
+      font-size:1.15rem;
+    }
+    .theme-toggle:hover{color:var(--fg);background:var(--muted-bg)}
+
+    .btn{
+      display:inline-flex;align-items:center;gap:0.5rem;
+      padding:0.7rem 1.6rem;
+      border-radius:999px;
+      font-weight:600;font-size:0.875rem;
+      transition:all 0.25s;
+      border:none;cursor:pointer;
+      font-family:var(--font-body);
+    }
+    .btn-primary{background:var(--secondary);color:#fff}
+    .btn-primary:hover{transform:translateY(-1px);box-shadow:0 6px 24px rgba(37,99,235,0.3)}
+    .btn-accent{background:var(--accent);color:#fff}
+    .btn-accent:hover{transform:translateY(-1px);box-shadow:0 6px 24px rgba(6,182,212,0.3)}
+    .btn-outline{
+      background:transparent;
+      color:var(--secondary);
+      border:1.5px solid var(--secondary);
+    }
+    .btn-outline:hover{background:var(--secondary);color:#fff}
+    .btn-ghost{background:transparent;color:var(--fg);border:1.5px solid var(--card-border)}
+    .btn-ghost:hover{border-color:var(--secondary);color:var(--secondary)}
+    .btn-sm{padding:0.5rem 1.2rem;font-size:0.8rem}
+
+    .nav-cta{display:inline-flex;align-items:center;gap:0.5rem}
+    .nav-toggle{
+      display:none;
+      flex-direction:column;gap:5px;
+      cursor:pointer;background:none;border:none;padding:4px;
+    }
+    .nav-toggle span{display:block;width:24px;height:2px;background:var(--fg);transition:0.3s;border-radius:2px}
+    .nav-toggle.active span:nth-child(1){transform:rotate(45deg)translate(5px,5px)}
+    .nav-toggle.active span:nth-child(2){opacity:0}
+    .nav-toggle.active span:nth-child(3){transform:rotate(-45deg)translate(5px,-5px)}
+
+    @media(max-width:64rem){
+      .nav-links,.nav-cta{display:none}
+      .nav-toggle{display:flex}
+      .nav-links.open{
+        display:flex;flex-direction:column;
+        position:absolute;top:100%;left:0;right:0;
+        background:var(--card-bg);padding:1.5rem 2rem;
+        border-bottom:1px solid var(--card-border);
+        gap:1.25rem;box-shadow:var(--shadow-lg);
+      }
+      .nav-links.open .nav-cta{display:inline-flex;margin-top:0.5rem}
+    }
+
+    /* Hero */
+    .hero{
+      min-height:100svh;
+      display:flex;align-items:center;
+      padding-top:5rem;
+      overflow:hidden;
+      position:relative;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:4rem;
+      align-items:center;
+    }
+    @media(max-width:64rem){.hero-grid{grid-template-columns:1fr;gap:3rem;text-align:center}}
+    .hero-tagline{
+      display:inline-flex;
+      align-items:center;
+      gap:0.5rem;
+      font-family:var(--font-display);
+      font-size:0.85rem;
+      font-weight:600;
+      color:var(--accent);
+      text-transform:uppercase;
+      letter-spacing:0.12em;
+      margin-bottom:1.5rem;
+    }
+    .hero-tagline::before{
+      content:'';width:2rem;height:2px;background:var(--accent);border-radius:2px;
+    }
+    .hero h1{
+      font-size:clamp(2.2rem,5vw,3.8rem);
+      letter-spacing:-0.02em;
+      line-height:1.1;
+    }
+    .hero p{
+      color:var(--muted);
+      font-size:1.1rem;
+      line-height:1.7;
+      max-width:520px;
+      margin-top:1.25rem;
+    }
+    @media(max-width:64rem){.hero p{margin-left:auto;margin-right:auto}}
+    .hero-highlight{
+      display:inline-flex;
+      gap:0.75rem;
+      margin-top:1.5rem;
+      font-family:var(--font-display);
+      font-weight:600;
+      font-size:1rem;
+      color:var(--secondary);
+    }
+    .hero-highlight span{color:var(--accent)}
+    .hero-actions{
+      display:flex;
+      gap:1rem;
+      flex-wrap:wrap;
+      margin-top:2.5rem;
+    }
+    @media(max-width:64rem){.hero-actions{justify-content:center}}
+    .hero-visual{
+      position:relative;
+      display:flex;align-items:center;justify-content:center;
+    }
+    .hero-visual-inner{
+      position:relative;
+      width:100%;
+      aspect-ratio:4/3;
+      border-radius:var(--radius);
+      background:linear-gradient(135deg,var(--primary),#1E3A5F);
+      overflow:hidden;
+      box-shadow:var(--shadow-lg);
+    }
+    .hero-grid-dots{
+      position:absolute;inset:0;
+      background-image:radial-gradient(circle,rgba(255,255,255,0.08) 1px,transparent 1px);
+      background-size:24px 24px;
+    }
+    .hero-visual-content{
+      position:relative;z-index:2;
+      padding:2rem;
+      display:flex;flex-direction:column;gap:1rem;
+      height:100%;justify-content:center;
+    }
+    .hero-visual-content .mockup-bar{
+      display:flex;gap:0.5rem;align-items:center;
+      background:rgba(255,255,255,0.06);
+      border-radius:8px;padding:0.75rem 1rem;
+      backdrop-filter:blur(8px);
+    }
+    .hero-visual-content .mockup-bar .dots{
+      display:flex;gap:5px;
+    }
+    .hero-visual-content .mockup-bar .dots span{
+      width:8px;height:8px;border-radius:50%;
+    }
+    .hero-visual-content .mockup-bar .dots span:nth-child(1){background:#ef4444}
+    .hero-visual-content .mockup-bar .dots span:nth-child(2){background:#f59e0b}
+    .hero-visual-content .mockup-bar .dots span:nth-child(3){background:#22c55e}
+    .hero-visual-content .mockup-bar span:last-child{
+      font-size:0.7rem;color:rgba(255,255,255,0.5);margin-left:0.5rem;font-family:var(--font-mono,monospace);
+    }
+    .hero-chart{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:0.75rem;
+    }
+    .hero-chart .bar{
+      height:clamp(60px,10vw,120px);
+      border-radius:6px;
+      background:linear-gradient(to top,var(--secondary),var(--accent));
+      opacity:0.15;
+      align-self:end;
+    }
+    .hero-chart .bar:nth-child(1){height:40%;opacity:0.3}
+    .hero-chart .bar:nth-child(2){height:70%;opacity:0.5}
+    .hero-chart .bar:nth-child(3){height:100%;opacity:0.7}
+    .hero-visual-content .mockup-row{
+      display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;
+    }
+    .hero-visual-content .mockup-row .card-mock{
+      background:rgba(255,255,255,0.05);
+      border-radius:8px;padding:0.75rem;
+      backdrop-filter:blur(4px);
+    }
+    .hero-visual-content .mockup-row .card-mock .line{
+      height:6px;background:rgba(255,255,255,0.08);border-radius:3px;margin-bottom:6px;
+    }
+    .hero-visual-content .mockup-row .card-mock .line:last-child{width:60%}
+    .hero-visual-content .mockup-row .card-mock .glow-line{
+      height:6px;background:linear-gradient(90deg,var(--accent),var(--secondary));border-radius:3px;width:80%;
+    }
+
+    /* About */
+    .about-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:4rem;
+      align-items:center;
+    }
+    @media(max-width:48rem){.about-grid{grid-template-columns:1fr;gap:2rem}}
+    .about-visual{
+      position:relative;
+      border-radius:var(--radius);
+      overflow:hidden;
+      background:linear-gradient(135deg,var(--primary),#1E3A5F);
+      aspect-ratio:4/3;
+      display:flex;align-items:center;justify-content:center;
+      box-shadow:var(--shadow-lg);
+    }
+    .about-visual .monogram{
+      font-family:var(--font-display);
+      font-size:clamp(4rem,10vw,8rem);
+      font-weight:800;
+      color:rgba(255,255,255,0.06);
+      position:absolute;
+      top:50%;left:50%;
+      transform:translate(-50%,-50%);
+      letter-spacing:-0.04em;
+    }
+    .about-visual .content{
+      position:relative;z-index:2;
+      text-align:center;
+      color:rgba(255,255,255,0.9);
+    }
+    .about-visual .content h3{
+      font-size:1.5rem;color:#fff;margin-bottom:0.25rem;
+    }
+    .about-visual .content p{font-size:0.9rem;opacity:0.6}
+    .about-visual .grid-overlay{
+      position:absolute;inset:0;
+      background-image:radial-gradient(circle,rgba(255,255,255,0.06) 1px,transparent 1px);
+      background-size:32px 32px;
+    }
+    .skills-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:0.5rem;
+      margin-top:1.5rem;
+    }
+    .skill-tag{
+      display:flex;align-items:center;gap:0.5rem;
+      font-size:0.85rem;
+      padding:0.5rem 0;
+    }
+    .skill-tag::before{
+      content:'';
+      width:5px;height:5px;
+      border-radius:50%;
+      background:var(--accent);
+      flex-shrink:0;
+    }
+
+    /* Services */
+    .services-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:1px;
+      overflow:hidden;
+      border:1px solid var(--card-border);
+      background:var(--card-border);
+      border-radius:var(--radius);
+    }
+    @media(max-width:64rem){.services-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:40rem){.services-grid{grid-template-columns:1fr}}
+    .service-card{
+      background:var(--card-bg);
+      padding:2rem;
+      transition:all 0.3s;
+      position:relative;
+    }
+    .service-card:hover{background:var(--muted-bg)}
+    .service-card .icon{
+      width:44px;height:44px;
+      border-radius:var(--radius-sm);
+      background:rgba(6,182,212,0.1);
+      display:flex;align-items:center;justify-content:center;
+      font-size:1.25rem;
+      margin-bottom:1rem;
+      color:var(--accent);
+    }
+    .service-card h3{font-size:1.05rem;margin-bottom:0.5rem}
+    .service-card p{color:var(--muted);font-size:0.85rem;line-height:1.6}
+    .service-card .num{
+      position:absolute;
+      top:1.5rem;right:1.5rem;
+      font-family:var(--font-display);
+      font-size:0.75rem;
+      font-weight:600;
+      color:var(--muted);
+      opacity:0.3;
+    }
+
+    /* Why */
+    .why-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:1.5rem;
+    }
+    @media(max-width:64rem){.why-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:40rem){.why-grid{grid-template-columns:1fr}}
+    .why-card{
+      background:var(--card-bg);
+      border:1px solid var(--card-border);
+      border-radius:var(--radius);
+      padding:1.75rem;
+      transition:all 0.3s;
+      text-align:center;
+    }
+    .why-card:hover{
+      box-shadow:var(--shadow-lg);
+      transform:translateY(-2px);
+    }
+    .why-card .icon{
+      width:48px;height:48px;
+      border-radius:50%;
+      background:rgba(37,99,235,0.08);
+      display:flex;align-items:center;justify-content:center;
+      margin:0 auto 1rem;
+      font-size:1.25rem;
+      color:var(--secondary);
+    }
+    .why-card h3{font-size:1rem;margin-bottom:0.4rem}
+    .why-card p{color:var(--muted);font-size:0.85rem}
+
+    /* Portfolio */
+    .portfolio-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:1px;
+      overflow:hidden;
+      border:1px solid var(--card-border);
+      background:var(--card-border);
+      border-radius:var(--radius);
+    }
+    @media(max-width:64rem){.portfolio-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:40rem){.portfolio-grid{grid-template-columns:1fr}}
+    .portfolio-item{
+      background:var(--card-bg);
+      padding:2rem;
+      transition:all 0.3s;
+      display:flex;flex-direction:column;
+    }
+    .portfolio-item:hover{background:var(--muted-bg)}
+    .portfolio-item .thumb{
+      aspect-ratio:16/9;
+      border-radius:var(--radius-sm);
+      background:linear-gradient(135deg,var(--primary),#1E3A5F);
+      margin-bottom:1rem;
+      display:flex;align-items:center;justify-content:center;
+      position:relative;
+      overflow:hidden;
+    }
+    .portfolio-item .thumb .placeholder{
+      font-family:var(--font-display);
+      font-size:clamp(1.5rem,3vw,2.5rem);
+      font-weight:700;
+      color:rgba(255,255,255,0.1);
+    }
+    .portfolio-item .thumb .overlay{
+      position:absolute;inset:0;
+      background:rgba(15,23,42,0.6);
+      opacity:0;
+      display:flex;align-items:center;justify-content:center;
+      transition:opacity 0.3s;
+    }
+    .portfolio-item:hover .thumb .overlay{opacity:1}
+    .portfolio-item .thumb .overlay span{
+      color:#fff;font-size:0.85rem;font-weight:500;
+    }
+    .portfolio-item .tag{
+      font-size:0.7rem;
+      font-weight:600;
+      text-transform:uppercase;
+      letter-spacing:0.08em;
+      color:var(--accent);
+      margin-bottom:0.35rem;
+    }
+    .portfolio-item h3{font-size:1rem;margin-bottom:0.25rem}
+    .portfolio-item .tech{
+      display:flex;flex-wrap:wrap;gap:0.4rem;
+      margin:0.75rem 0 1rem;
+    }
+    .portfolio-item .tech span{
+      font-size:0.7rem;
+      padding:0.2rem 0.6rem;
+      border-radius:999px;
+      background:var(--muted-bg);
+      color:var(--muted);
+    }
+
+    /* Process */
+    .process-grid{
+      display:grid;
+      grid-template-columns:repeat(6,1fr);
+      gap:1px;
+      overflow:hidden;
+      border:1px solid var(--card-border);
+      background:var(--card-border);
+      border-radius:var(--radius);
+    }
+    @media(max-width:64rem){.process-grid{grid-template-columns:repeat(3,1fr)}}
+    @media(max-width:40rem){.process-grid{grid-template-columns:repeat(2,1fr)}}
+    .process-step{
+      background:var(--card-bg);
+      padding:2rem 1.5rem;
+      text-align:center;
+      transition:all 0.3s;
+    }
+    .process-step:hover{background:var(--muted-bg)}
+    .process-step .num{
+      font-family:var(--font-display);
+      font-size:2rem;
+      font-weight:800;
+      color:rgba(37,99,235,0.12);
+      line-height:1;
+    }
+    .process-step h3{font-size:0.95rem;margin:0.5rem 0 0.25rem}
+    .process-step p{color:var(--muted);font-size:0.8rem}
+
+    /* Results */
+    .results-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:1px;
+      overflow:hidden;
+      border:1px solid var(--card-border);
+      background:var(--card-border);
+      border-radius:var(--radius);
+    }
+    @media(max-width:48rem){.results-grid{grid-template-columns:repeat(2,1fr)}}
+    .result-card{
+      background:var(--card-bg);
+      padding:2.5rem 1.5rem;
+      text-align:center;
+    }
+    .result-card .num{
+      font-family:var(--font-display);
+      font-size:clamp(2rem,4vw,3rem);
+      font-weight:800;
+      color:var(--secondary);
+      line-height:1;
+    }
+    .result-card .num .suffix{color:var(--accent)}
+    .result-card .label{
+      margin-top:0.5rem;
+      color:var(--muted);
+      font-size:0.85rem;
+    }
+
+    /* Testimonials */
+    .testimonials-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:1.5rem;
+    }
+    @media(max-width:64rem){.testimonials-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:40rem){.testimonials-grid{grid-template-columns:1fr}}
+    .testimonial-card{
+      background:var(--card-bg);
+      border:1px solid var(--card-border);
+      border-radius:var(--radius);
+      padding:1.75rem;
+      transition:all 0.3s;
+    }
+    .testimonial-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-2px)}
+    .testimonial-card .stars{
+      color:#f59e0b;
+      font-size:0.9rem;
+      margin-bottom:0.75rem;
+    }
+    .testimonial-card blockquote{
+      font-size:0.9rem;
+      color:var(--fg);
+      line-height:1.7;
+      font-style:italic;
+    }
+    .testimonial-card .author{
+      display:flex;align-items:center;gap:0.75rem;
+      margin-top:1.25rem;
+      padding-top:1rem;
+      border-top:1px solid var(--card-border);
+    }
+    .testimonial-card .author .avatar{
+      width:40px;height:40px;
+      border-radius:50%;
+      background:linear-gradient(135deg,var(--secondary),var(--accent));
+      display:flex;align-items:center;justify-content:center;
+      color:#fff;font-weight:600;font-size:0.85rem;
+    }
+    .testimonial-card .author .info strong{display:block;font-size:0.85rem}
+    .testimonial-card .author .info span{font-size:0.75rem;color:var(--muted)}
+
+    /* Blog */
+    .blog-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:1.5rem;
+    }
+    @media(max-width:64rem){.blog-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:40rem){.blog-grid{grid-template-columns:1fr}}
+    .blog-card{
+      background:var(--card-bg);
+      border:1px solid var(--card-border);
+      border-radius:var(--radius);
+      overflow:hidden;
+      transition:all 0.3s;
+    }
+    .blog-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-2px)}
+    .blog-card .thumb{
+      aspect-ratio:16/9;
+      background:linear-gradient(135deg,var(--muted-bg),var(--card-border));
+      display:flex;align-items:center;justify-content:center;
+      font-family:var(--font-display);
+      font-size:2rem;
+      font-weight:700;
+      color:rgba(15,23,42,0.06);
+    }
+    [data-theme="dark"] .blog-card .thumb{color:rgba(255,255,255,0.05)}
+    .blog-card .body{padding:1.25rem}
+    .blog-card .body .cat{
+      font-size:0.7rem;
+      text-transform:uppercase;
+      letter-spacing:0.08em;
+      color:var(--accent);
+      font-weight:600;
+    }
+    .blog-card .body h3{font-size:0.95rem;margin:0.4rem 0}
+    .blog-card .body p{font-size:0.8rem;color:var(--muted);line-height:1.6}
+    .blog-card .body .read-more{
+      font-size:0.8rem;font-weight:600;color:var(--secondary);
+      display:inline-flex;align-items:center;gap:0.3rem;
+      margin-top:0.75rem;
+    }
+
+    /* CTA */
+    .cta-section{
+      background:linear-gradient(135deg,var(--primary),#1E3A5F);
+      border-radius:var(--radius);
+      padding:4rem 3rem;
+      text-align:center;
+      position:relative;
+      overflow:hidden;
+    }
+    .cta-section .grid-overlay{
+      position:absolute;inset:0;
+      background-image:radial-gradient(circle,rgba(255,255,255,0.04) 1px,transparent 1px);
+      background-size:32px 32px;
+    }
+    .cta-section .content{position:relative;z-index:2}
+    .cta-section h2{
+      color:#fff;
+      font-size:clamp(1.75rem,4vw,2.5rem);
+    }
+    .cta-section p{
+      color:rgba(255,255,255,0.6);
+      max-width:520px;
+      margin:0.75rem auto 2rem;
+      font-size:1rem;
+      line-height:1.7;
+    }
+    .cta-section .btn-primary{
+      font-size:1rem;
+      padding:0.9rem 2.2rem;
+    }
+
+    /* Contact */
+    .contact-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:3rem;
+    }
+    @media(max-width:48rem){.contact-grid{grid-template-columns:1fr}}
+    .contact-info h3{font-size:1.15rem;margin-bottom:1.5rem}
+    .contact-info-item{
+      display:flex;align-items:center;gap:0.75rem;
+      padding:0.75rem 0;
+      font-size:0.9rem;
+    }
+    .contact-info-item .icon{
+      width:36px;height:36px;
+      border-radius:50%;
+      background:rgba(6,182,212,0.08);
+      display:flex;align-items:center;justify-content:center;
+      flex-shrink:0;
+      color:var(--accent);
+      font-size:0.9rem;
+    }
+    .contact-info-item .lbl{font-size:0.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em}
+    .social-links{
+      display:flex;gap:0.75rem;margin-top:1.5rem;
+    }
+    .social-links a{
+      width:40px;height:40px;
+      border-radius:50%;
+      border:1px solid var(--card-border);
+      display:flex;align-items:center;justify-content:center;
+      color:var(--muted);
+      transition:all 0.2s;
+      font-size:0.85rem;
+    }
+    .social-links a:hover{color:var(--secondary);border-color:var(--secondary)}
+
+    .form-group{
+      margin-bottom:1.25rem;
+    }
+    .form-group label{
+      display:block;
+      font-size:0.8rem;
+      font-weight:600;
+      margin-bottom:0.4rem;
+      color:var(--fg);
+    }
+    .form-group input,.form-group textarea,.form-group select{
+      width:100%;
+      padding:0.75rem 1rem;
+      background:var(--card-bg);
+      border:1.5px solid var(--card-border);
+      border-radius:var(--radius-sm);
+      font-family:var(--font-body);
+      font-size:0.9rem;
+      color:var(--fg);
+      transition:border-color 0.2s;
+      outline:none;
+    }
+    .form-group input:focus,.form-group textarea:focus{border-color:var(--secondary)}
+    .form-group textarea{resize:vertical;min-height:100px}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+    @media(max-width:40rem){.form-row{grid-template-columns:1fr}}
+
+    /* Footer */
+    .footer{
+      border-top:1px solid var(--card-border);
+      padding:3rem 0 1.5rem;
+      margin-top:2rem;
+    }
+    .footer-grid{
+      display:grid;
+      grid-template-columns:2fr 1fr 1fr 1fr;
+      gap:2rem;
+    }
+    @media(max-width:48rem){.footer-grid{grid-template-columns:1fr 1fr;gap:2rem}}
+    @media(max-width:40rem){.footer-grid{grid-template-columns:1fr}}
+    .footer-brand .logo{
+      display:flex;align-items:center;gap:0.5rem;
+      font-family:var(--font-display);
+      font-weight:700;font-size:1.2rem;
+      color:var(--logo-color);
+    }
+    .footer-brand p{
+      color:var(--muted);
+      font-size:0.85rem;
+      max-width:320px;
+      margin-top:0.75rem;
+      line-height:1.6;
+    }
+    .footer-col h4{
+      font-size:0.75rem;
+      text-transform:uppercase;
+      letter-spacing:0.1em;
+      color:var(--muted);
+      margin-bottom:1rem;
+    }
+    .footer-col a{
+      display:block;
+      font-size:0.85rem;
+      color:var(--muted);
+      padding:0.3rem 0;
+      transition:color 0.2s;
+    }
+    .footer-col a:hover{color:var(--fg)}
+    .footer-bottom{
+      margin-top:2rem;
+      padding-top:1.25rem;
+      border-top:1px solid var(--card-border);
+      display:flex;justify-content:space-between;align-items:center;
+      flex-wrap:wrap;gap:0.75rem;
+      font-size:0.8rem;color:var(--muted);
+    }
+
+    /* WhatsApp Float */
+    .wa-float{
+      position:fixed;
+      bottom:1.5rem;right:1.5rem;
+      z-index:99;
+      width:52px;height:52px;
+      border-radius:50%;
+      background:#25d366;
+      display:flex;align-items:center;justify-content:center;
+      box-shadow:0 4px 20px rgba(37,211,102,0.3);
+      transition:all 0.3s;
+      color:#fff;
+    }
+    .wa-float:hover{transform:scale(1.08);box-shadow:0 6px 28px rgba(37,211,102,0.4)}
+    .wa-float svg{width:24px;height:24px;fill:currentColor}
+
+    /* AI Chat */
+    .chat-toggle{
+      position:fixed;
+      bottom:1.5rem;left:1.5rem;
+      z-index:99;
+      width:52px;height:52px;
+      border-radius:50%;
+      background:linear-gradient(135deg,var(--secondary),var(--accent));
+      display:flex;align-items:center;justify-content:center;
+      box-shadow:0 4px 20px rgba(37,99,235,0.25);
+      transition:all 0.3s;
+      cursor:pointer;
+      border:none;
+      color:#fff;
+      font-size:1.25rem;
+    }
+    .chat-toggle:hover{transform:scale(1.08)}
+    .chat-box{
+      position:fixed;
+      bottom:5rem;left:1.5rem;
+      z-index:99;
+      width:340px;
+      max-height:440px;
+      background:var(--card-bg);
+      border:1px solid var(--card-border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow-lg);
+      display:none;
+      flex-direction:column;
+      overflow:hidden;
+    }
+    .chat-box.open{display:flex}
+    .chat-box .header{
+      padding:1rem;
+      background:linear-gradient(135deg,var(--primary),#1E3A5F);
+      color:#fff;
+      font-size:0.9rem;
+      font-weight:600;
+      display:flex;align-items:center;justify-content:space-between;
+    }
+    .chat-box .header button{
+      background:none;border:none;color:rgba(255,255,255,0.6);
+      cursor:pointer;font-size:1.1rem;
+    }
+    .chat-box .messages{
+      flex:1;
+      padding:1rem;
+      overflow-y:auto;
+      display:flex;flex-direction:column;gap:0.75rem;
+    }
+    .chat-box .messages .msg{
+      padding:0.6rem 0.9rem;
+      border-radius:12px;
+      font-size:0.85rem;
+      max-width:85%;
+      line-height:1.5;
+    }
+    .chat-box .messages .msg.bot{
+      background:var(--muted-bg);
+      align-self:flex-start;
+      border-bottom-left-radius:4px;
+    }
+    .chat-box .messages .msg.user{
+      background:var(--secondary);
+      color:#fff;
+      align-self:flex-end;
+      border-bottom-right-radius:4px;
+    }
+    .chat-box .input-area{
+      display:flex;
+      border-top:1px solid var(--card-border);
+      padding:0.6rem;
+    }
+    .chat-box .input-area input{
+      flex:1;
+      border:none;
+      outline:none;
+      padding:0.5rem 0.75rem;
+      font-size:0.85rem;
+      background:transparent;
+      color:var(--fg);
+      font-family:var(--font-body);
+    }
+    .chat-box .input-area button{
+      background:var(--secondary);
+      color:#fff;
+      border:none;
+      border-radius:50%;
+      width:34px;height:34px;
+      cursor:pointer;
+      display:flex;align-items:center;justify-content:center;
+      font-size:0.85rem;
+    }
+
+    /* Animations */
+    .reveal{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+    .reveal-delay-1{transition-delay:0.1s}
+    .reveal-delay-2{transition-delay:0.2s}
+    .reveal-delay-3{transition-delay:0.3s}
+    .reveal-delay-4{transition-delay:0.4s}
+
+    /* Toast */
+    .toast{
+      position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%);
+      z-index:200;
+      padding:0.75rem 1.5rem;
+      border-radius:999px;
+      background:var(--card-bg);
+      border:1px solid var(--card-border);
+      color:var(--fg);
+      font-size:0.85rem;
+      box-shadow:var(--shadow-lg);
+      opacity:0;
+      transition:all 0.3s;
+      pointer-events:none;
+    }
+    .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="#" class="nav-logo">
+        <img src="images/photo1.png" alt="StudioZar" />
+        StudioZar
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="#">Home</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#about">About</a>
+        <a href="#blog">Blog</a>
+        <a href="#contact">Contact</a>
+        <a href="#contact" class="btn btn-primary btn-sm nav-cta">Let's Talk</a>
+      </div>
+      <div class="nav-right">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button>
+        <button class="nav-toggle" id="navToggle" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container" style="width:100%">
+      <div class="hero-grid">
+        <div>
+          <div class="hero-tagline">Digital Agency</div>
+          <h1>Transforming Ideas Into Powerful Digital Experiences</h1>
+          <p>Helping businesses grow through professional websites, SEO, AI-powered digital marketing, branding, and growth-focused online strategies.</p>
+          <div class="hero-highlight">Design <span>•</span> Develop <span>•</span> Grow</div>
+          <div class="hero-actions">
+            <a href="#portfolio" class="btn btn-primary">View Portfolio →</a>
+            <a href="#contact" class="btn btn-outline">Book Free Consultation</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-visual-inner">
+            <div class="hero-grid-dots"></div>
+            <div class="hero-visual-content">
+              <div class="mockup-bar">
+                <div class="dots"><span></span><span></span><span></span></div>
+                <span>studiozar.com</span>
+              </div>
+              <div class="hero-chart" style="margin-top:0.5rem">
+                <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+              </div>
+              <div class="mockup-row">
+                <div class="card-mock">
+                  <div class="line"></div>
+                  <div class="glow-line"></div>
+                  <div class="line" style="width:45%"></div>
+                </div>
+                <div class="card-mock">
+                  <div class="line"></div>
+                  <div class="line" style="width:70%"></div>
+                  <div class="glow-line"></div>
+                </div>
+              </div>
+              <div class="mockup-row">
+                <div class="card-mock">
+                  <div class="glow-line"></div>
+                  <div class="line"></div>
+                </div>
+                <div class="card-mock">
+                  <div class="line"></div>
+                  <div class="glow-line"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="section-pad">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:3rem">
+        <span class="section-label">What We Do</span>
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-desc" style="margin:0 auto">From custom websites to AI-powered marketing — we deliver end-to-end digital solutions that drive real business growth.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <span class="num">01</span>
+          <div class="icon">🌐</div>
+          <h3>Website Design & Development</h3>
+          <p>Custom websites built for performance and conversions — responsive, fast, and tailored to your brand.</p>
+        </div>
+        <div class="service-card reveal reveal-delay-1">
+          <span class="num">02</span>
+          <div class="icon">📈</div>
+          <h3>Search Engine Optimization</h3>
+          <p>Improve rankings and drive organic traffic with data-driven SEO strategies that deliver long-term results.</p>
+        </div>
+        <div class="service-card reveal reveal-delay-2">
+          <span class="num">03</span>
+          <div class="icon">🎯</div>
+          <h3>Google Ads Management</h3>
+          <p>Generate high-quality leads and maximize ROI with targeted Google Ads campaigns managed end-to-end.</p>
+        </div>
+        <div class="service-card reveal">
+          <span class="num">04</span>
+          <div class="icon">📱</div>
+          <h3>Social Media Marketing</h3>
+          <p>Build brand visibility and engagement with strategic content, community management, and paid social campaigns.</p>
+        </div>
+        <div class="service-card reveal reveal-delay-1">
+          <span class="num">05</span>
+          <div class="icon">📍</div>
+          <h3>Local Business Marketing</h3>
+          <p>Dominate local search results with Google Business Profile optimization, local citations, and geo-targeted ads.</p>
+        </div>
+        <div class="service-card reveal reveal-delay-2">
+          <span class="num">06</span>
+          <div class="icon">🤖</div>
+          <h3>AI-Powered Marketing</h3>
+          <p>Automate lead generation and customer engagement with AI chatbots, smart funnels, and predictive analytics.</p>
+        </div>
+        <div class="service-card reveal">
+          <span class="num">07</span>
+          <div class="icon">🏫</div>
+          <h3>School Website Development</h3>
+          <p>Feature-rich school websites with admission portals, event calendars, parent dashboards, and LMS integration.</p>
+        </div>
+        <div class="service-card reveal reveal-delay-1">
+          <span class="num">08</span>
+          <div class="icon">🏥</div>
+          <h3>Healthcare Website Development</h3>
+          <p>Professional websites for doctors, clinics, and hospitals with appointment booking, patient portals, and more.</p>
+        </div>
+        <div class="service-card reveal reveal-delay-2">
+          <span class="num">09</span>
+          <div class="icon">💪</div>
+          <h3>Gym & Fitness Websites</h3>
+          <p>High-energy fitness websites with class schedules, membership management, trainer profiles, and lead capture.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose -->
+  <section class="section-pad" style="padding-top:0">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:3rem">
+        <span class="section-label">Why StudioZar</span>
+        <h2 class="section-title">Built Different</h2>
+        <p class="section-desc" style="margin:0 auto">We combine modern design with proven marketing strategies to deliver results that matter for your business.</p>
+      </div>
+      <div class="why-grid">
+        <div class="why-card reveal"><div class="icon">🎨</div><h3>Modern Designs</h3><p>Pixel-perfect, contemporary designs that reflect your brand's identity and values.</p></div>
+        <div class="why-card reveal reveal-delay-1"><div class="icon">🔍</div><h3>SEO-Friendly Development</h3><p>Every site we build is optimized for search engines from day one.</p></div>
+        <div class="why-card reveal reveal-delay-2"><div class="icon">📱</div><h3>Mobile Optimized</h3><p>Flawless experiences across all devices — desktop, tablet, and mobile.</p></div>
+        <div class="why-card reveal"><div class="icon">⚡</div><h3>Fast Delivery</h3><p>We respect your time with clear timelines and on-time project delivery.</p></div>
+        <div class="why-card reveal reveal-delay-1"><div class="icon">💰</div><h3>Affordable Pricing</h3><p>Premium quality at transparent, competitive prices with no hidden fees.</p></div>
+        <div class="why-card reveal reveal-delay-2"><div class="icon">🤝</div><h3>Personalized Support</h3><p>Dedicated support long after launch — we're invested in your success.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Results -->
+  <section class="section-pad" style="padding-top:0">
+    <div class="container">
+      <div class="results-grid" id="counterSection">
+        <div class="result-card reveal"><div class="num" data-target="50">0<span class="suffix">+</span></div><div class="label">Projects Delivered</div></div>
+        <div class="result-card reveal reveal-delay-1"><div class="num" data-target="100">0<span class="suffix">+</span></div><div class="label">Marketing Campaigns</div></div>
+        <div class="result-card reveal reveal-delay-2"><div class="num" data-target="95">0<span class="suffix">%</span></div><div class="label">Client Satisfaction</div></div>
+        <div class="result-card reveal reveal-delay-3"><div class="num" data-target="500">0<span class="suffix">+</span></div><div class="label">Leads Generated</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section id="portfolio" class="section-pad" style="padding-top:0">
+    <div class="container">
+      <div style="margin-bottom:3rem">
+        <span class="section-label">Our Work</span>
+        <h2 class="section-title">Portfolio</h2>
+        <p class="section-desc">Real projects, real results. Here's what we've built for our clients.</p>
+      </div>
+      <div class="portfolio-grid">
+        <div class="portfolio-item reveal">
+          <div class="thumb"><div class="placeholder">🏫</div><div class="overlay"><span>View Project →</span></div></div>
+          <span class="tag">Education</span>
+          <h3>School Website</h3>
+          <p style="font-size:0.8rem;color:var(--muted)">Modern school portal with admissions & LMS</p>
+          <div class="tech"><span>WordPress</span><span>LMS</span><span>SEO</span></div>
+          <a href="#" class="btn btn-outline btn-sm">View Project</a>
+        </div>
+        <div class="portfolio-item reveal reveal-delay-1">
+          <div class="thumb"><div class="placeholder">🩺</div><div class="overlay"><span>View Project →</span></div></div>
+          <span class="tag">Healthcare</span>
+          <h3>Orthopaedic Doctor Website</h3>
+          <p style="font-size:0.8rem;color:var(--muted)">Professional clinic site with appointment booking</p>
+          <div class="tech"><span>React</span><span>Node.js</span><span>SEO</span></div>
+          <a href="#" class="btn btn-outline btn-sm">View Project</a>
+        </div>
+        <div class="portfolio-item reveal reveal-delay-2">
+          <div class="thumb"><div class="placeholder">💪</div><div class="overlay"><span>View Project →</span></div></div>
+          <span class="tag">Fitness</span>
+          <h3>Gym Website</h3>
+          <p style="font-size:0.8rem;color:var(--muted)">High-energy gym site with membership management</p>
+          <div class="tech"><span>WordPress</span><span>Custom Plugin</span></div>
+          <a href="#" class="btn btn-outline btn-sm">View Project</a>
+        </div>
+        <div class="portfolio-item reveal">
+          <div class="thumb"><div class="placeholder">🏢</div><div class="overlay"><span>View Project →</span></div></div>
+          <span class="tag">Business</span>
+          <h3>Business Website</h3>
+          <p style="font-size:0.8rem;color:var(--muted)">Premium corporate website with lead generation</p>
+          <div class="tech"><span>Next.js</span><span>Tailwind</span></div>
+          <a href="#" class="btn btn-outline btn-sm">View Project</a>
+        </div>
+        <div class="portfolio-item reveal reveal-delay-1">
+          <div class="thumb"><div class="placeholder">🏛️</div><div class="overlay"><span>View Project →</span></div></div>
+          <span class="tag">Corporate</span>
+          <h3>Corporate Website</h3>
+          <p style="font-size:0.8rem;color:var(--muted)">Enterprise-level site with CMS integration</p>
+          <div class="tech"><span>WordPress</span><span>ACF</span></div>
+          <a href="#" class="btn btn-outline btn-sm">View Project</a>
+        </div>
+        <div class="portfolio-item reveal reveal-delay-2">
+          <div class="thumb"><div class="placeholder">📊</div><div class="overlay"><span>View Project →</span></div></div>
+          <span class="tag">Digital Marketing</span>
+          <h3>Marketing Agency Website</h3>
+          <p style="font-size:0.8rem;color:var(--muted)">Full-service agency site with case studies</p>
+          <div class="tech"><span>React</span><span>GSAP</span></div>
+          <a href="#" class="btn btn-outline btn-sm">View Project</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section-pad" style="padding-top:0">
+    <div class="container">
+      <div style="margin-bottom:3rem">
+        <span class="section-label">Who We Are</span>
+        <h2 class="section-title">Meet Chandra Nandipati</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-visual reveal">
+          <div class="grid-overlay"></div>
+          <div class="monogram">SZ</div>
+          <div class="content">
+            <h3>Chandra Nandipati</h3>
+            <p>Digital Marketing Specialist & Web Developer</p>
+          </div>
+        </div>
+        <div class="reveal reveal-delay-1">
+          <p style="color:var(--muted);font-size:1.05rem;line-height:1.8">
+            I am a <strong style="color:var(--fg)">Digital Marketing Specialist</strong> and <strong style="color:var(--fg)">Website Developer</strong> passionate about creating websites and marketing systems that help businesses attract customers, generate leads, and grow online.
+          </p>
+          <p style="color:var(--muted);font-size:1.05rem;line-height:1.8;margin-top:1rem">
+            I combine design, technology, SEO, and digital marketing to deliver measurable business results.
+          </p>
+          <div class="skills-grid">
+            <div class="skill-tag">Website Design</div>
+            <div class="skill-tag">WordPress Development</div>
+            <div class="skill-tag">SEO</div>
+            <div class="skill-tag">Google Ads</div>
+            <div class="skill-tag">Social Media Marketing</div>
+            <div class="skill-tag">AI Marketing Solutions</div>
+            <div class="skill-tag">Branding</div>
+            <div class="skill-tag">Local SEO</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="section-pad" style="padding-top:0">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:3rem">
+        <span class="section-label">How We Work</span>
+        <h2 class="section-title">Our Process</h2>
+        <p class="section-desc" style="margin:0 auto">A proven six-step process that takes your project from concept to launch — and beyond.</p>
+      </div>
+      <div class="process-grid">
+        <div class="process-step reveal"><div class="num">01</div><h3>Discovery</h3><p>We learn your goals, audience, and competitive landscape.</p></div>
+        <div class="process-step reveal reveal-delay-1"><div class="num">02</div><h3>Strategy</h3><p>We craft a data-backed plan aligned with your vision.</p></div>
+        <div class="process-step reveal reveal-delay-2"><div class="num">03</div><h3>Design</h3><p>We create stunning, user-centered designs that convert.</p></div>
+        <div class="process-step reveal reveal-delay-3"><div class="num">04</div><h3>Development</h3><p>We build fast, secure, and scalable digital solutions.</p></div>
+        <div class="process-step reveal reveal-delay-1"><div class="num">05</div><h3>Launch</h3><p>We deploy, test, and optimize for peak performance.</p></div>
+        <div class="process-step reveal reveal-delay-2"><div class="num">06</div><h3>Growth</h3><p>We monitor, maintain, and help you scale over time.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section-pad" style="padding-top:0">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:3rem">
+        <span class="section-label">Client Love</span>
+        <h2 class="section-title">Testimonials</h2>
+        <p class="section-desc" style="margin:0 auto">Hear from the businesses we've helped transform.</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card reveal">
+          <div class="stars">★★★★★</div>
+          <blockquote>"StudioZar built our school website from scratch. The admissions portal alone saved us hundreds of hours. Highly recommended!"</blockquote>
+          <div class="author"><div class="avatar">RK</div><div class="info"><strong>Ravi Kumar</strong><span>Principal, Sunshine School</span></div></div>
+        </div>
+        <div class="testimonial-card reveal reveal-delay-1">
+          <div class="stars">★★★★★</div>
+          <blockquote>"Our clinic's online appointments increased by 300% after Chandra redesigned our website and optimized it for local SEO."</blockquote>
+          <div class="author"><div class="avatar">DS</div><div class="info"><strong>Dr. S. Reddy</strong><span>Orthopaedic Surgeon</span></div></div>
+        </div>
+        <div class="testimonial-card reveal reveal-delay-2">
+          <div class="stars">★★★★★</div>
+          <blockquote>"The Google Ads campaign StudioZar manages for our gym brings in 40+ qualified leads every month. ROI has been outstanding."</blockquote>
+          <div class="author"><div class="avatar">AM</div><div class="info"><strong>Arjun Mehta</strong><span>Owner, FitZone Gym</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog -->
+  <section id="blog" class="section-pad" style="padding-top:0">
+    <div class="container">
+      <div style="margin-bottom:3rem">
+        <span class="section-label">Insights</span>
+        <h2 class="section-title">Latest Articles</h2>
+        <p class="section-desc">Expert tips, trends, and guides on digital marketing, web development, and AI.</p>
+      </div>
+      <div class="blog-grid">
+        <div class="blog-card reveal">
+          <div class="thumb">SEO</div>
+          <div class="body">
+            <span class="cat">SEO</span>
+            <h3>10 Local SEO Tips for Small Businesses in 2026</h3>
+            <p>Dominate local search with these actionable SEO strategies tailored for small and medium businesses.</p>
+            <a href="#" class="read-more">Read More →</a>
+          </div>
+        </div>
+        <div class="blog-card reveal reveal-delay-1">
+          <div class="thumb">🌐</div>
+          <div class="body">
+            <span class="cat">Web Design</span>
+            <h3>Why Your Business Needs a Modern Website in 2026</h3>
+            <p>Discover how a modern, responsive website can transform your business and attract more customers.</p>
+            <a href="#" class="read-more">Read More →</a>
+          </div>
+        </div>
+        <div class="blog-card reveal reveal-delay-2">
+          <div class="thumb">🤖</div>
+          <div class="body">
+            <span class="cat">AI Marketing</span>
+            <h3>How AI is Transforming Digital Marketing in 2026</h3>
+            <p>Explore the latest AI tools and strategies that are reshaping how businesses attract and engage customers.</p>
+            <a href="#" class="read-more">Read More →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section-pad" style="padding-top:0">
+    <div class="container">
+      <div class="cta-section reveal">
+        <div class="grid-overlay"></div>
+        <div class="content">
+          <h2>Ready to Grow Your Business Online?</h2>
+          <p>Let's build a website and marketing strategy that helps your business stand out and generate consistent results.</p>
+          <a href="#contact" class="btn btn-primary" style="background:#2563EB;color:#fff;box-shadow:0 6px 24px rgba(37,99,235,0.3)">Start Your Project →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section-pad" style="padding-top:0">
+    <div class="container">
+      <div style="margin-bottom:3rem">
+        <span class="section-label">Get in Touch</span>
+        <h2 class="section-title">Let's Talk</h2>
+        <p class="section-desc">Ready to start your project? Fill out the form and we'll get back to you within 24 hours.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="reveal">
+          <h3>Contact Information</h3>
+          <div class="contact-info-item"><div class="icon">👤</div><div><div class="lbl">Owner</div><div>Chandra Nandipati</div></div></div>
+          <div class="contact-info-item"><div class="icon">🏢</div><div><div class="lbl">Business</div><div>StudioZar</div></div></div>
+          <div class="contact-info-item"><div class="icon">📞</div><div><div class="lbl">Phone / WhatsApp</div><div><a href="tel:+917989950973">+91 79899 50973</a></div></div></div>
+          <div class="contact-info-item"><div class="icon">✉️</div><div><div class="lbl">Email</div><div><a href="mailto:chandradigitalai@gmail.com">chandradigitalai@gmail.com</a></div></div></div>
+          <div class="contact-info-item"><div class="icon">📍</div><div><div class="lbl">Address</div><div>4-1-106, Patnool Street, Tirupati</div></div></div>
+          <div class="social-links">
+            <a href="https://linkedin.com/in/chandranandipati" target="_blank" aria-label="LinkedIn">in</a>
+            <a href="https://instagram.com/studiozar" target="_blank" aria-label="Instagram">ig</a>
+            <a href="https://facebook.com/studiozar" target="_blank" aria-label="Facebook">fb</a>
+            <a href="https://wa.me/917989950973" target="_blank" aria-label="WhatsApp">wa</a>
+          </div>
+        </div>
+        <form id="contactForm" class="reveal reveal-delay-1">
+          <div class="form-row">
+            <div class="form-group"><label for="name">Name *</label><input type="text" id="name" name="name" required placeholder="Your full name" /></div>
+            <div class="form-group"><label for="email">Email *</label><input type="email" id="email" name="email" required placeholder="your@email.com" /></div>
+          </div>
+          <div class="form-group"><label for="phone">Phone</label><input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" /></div>
+          <div class="form-group"><label for="message">Message *</label><textarea id="message" name="message" required placeholder="Tell us about your project..."></textarea></div>
+          <button type="submit" class="btn btn-primary" id="submitBtn" style="width:100%;justify-content:center;padding:0.85rem">Send Message →</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo"><img src="images/photo1.png" alt="StudioZar" style="height:2rem;width:auto;border-radius:4px" /> StudioZar</div>
+          <p>Design • Develop • Grow. We help businesses attract customers, generate leads, and scale online with modern websites and data-driven marketing.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <a href="#">Home</a>
+          <a href="#services">Services</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#blog">Blog</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <a href="#services">Web Development</a>
+          <a href="#services">SEO</a>
+          <a href="#services">Google Ads</a>
+          <a href="#services">Social Media</a>
+          <a href="#services">AI Marketing</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="tel:+917989950973">+91 79899 50973</a>
+          <a href="mailto:chandradigitalai@gmail.com">chandradigitalai@gmail.com</a>
+          <a href="https://wa.me/917989950973">WhatsApp</a>
+          <a>4-1-106, Patnool St, Tirupati</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 StudioZar. All Rights Reserved.</span>
+        <span>Designed with ❤️ in India</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/917989950973" target="_blank" class="wa-float" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <!-- AI Chat -->
+  <button class="chat-toggle" id="chatToggle" aria-label="AI Chat Assistant">🤖</button>
+  <div class="chat-box" id="chatBox">
+    <div class="header"><span>StudioZar AI Assistant</span><button id="chatClose">✕</button></div>
+    <div class="messages" id="chatMessages">
+      <div class="msg bot">Hi! I'm StudioZar's AI assistant. Ask me about our services, pricing, or anything else!</div>
+    </div>
+    <div class="input-area">
+      <input type="text" id="chatInput" placeholder="Type your message..." />
+      <button id="chatSend">➤</button>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <script>
+    // --- Nav scroll ---
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 50));
+
+    // --- Mobile nav ---
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => {
+      toggle.classList.toggle('active');
+      links.classList.toggle('open');
+    });
+    links.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', () => {
+      toggle.classList.remove('active');
+      links.classList.remove('open');
+    }));
+
+    // --- Theme ---
+    const themeToggle = document.getElementById('themeToggle');
+    const html = document.documentElement;
+    const saved = localStorage.getItem('theme') || 'light';
+    html.setAttribute('data-theme', saved);
+    themeToggle.textContent = saved === 'dark' ? '☀️' : '🌙';
+    themeToggle.addEventListener('click', () => {
+      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      themeToggle.textContent = next === 'dark' ? '☀️' : '🌙';
+    });
+
+    // --- Reveal ---
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // --- Counters ---
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const nums = entry.target.querySelectorAll('[data-target]');
+        nums.forEach(el => {
+          const target = parseInt(el.dataset.target);
+          const suffix = el.querySelector('.suffix');
+          const numEl = document.createTextNode('');
+          let current = 0;
+          const step = Math.ceil(target / 60);
+          const interval = setInterval(() => {
+            current += step;
+            if (current >= target) { current = target; clearInterval(interval); }
+            el.childNodes[0].textContent = current;
+          }, 25);
+        });
+        counterObserver.unobserve(entry.target);
+      });
+    }, { threshold: 0.3 });
+    const counterSection = document.getElementById('counterSection');
+    if (counterSection) counterObserver.observe(counterSection);
+
+    // --- Contact form → WhatsApp ---
+    const form = document.getElementById('contactForm');
+    const btn = document.getElementById('submitBtn');
+    const toast = document.getElementById('toast');
+    function showToast(msg, type = 'success') {
+      toast.textContent = msg; toast.className = 'toast ' + type + ' show';
+      setTimeout(() => toast.classList.remove('show'), 4000);
+    }
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+      let text = '*New Contact Request - StudioZar*%0A%0A';
+      text += `*Name:* ${data.get('name')}%0A`;
+      text += `*Email:* ${data.get('email')}%0A`;
+      if (data.get('phone')) text += `*Phone:* ${data.get('phone')}%0A`;
+      text += `*Message:* ${data.get('message')}%0A`;
+      const url = `https://wa.me/917989950973?text=${text}`;
+      btn.textContent = 'Redirecting...'; btn.disabled = true;
+      showToast('Redirecting to WhatsApp...');
+      setTimeout(() => {
+        window.open(url, '_blank');
+        btn.textContent = 'Send Message →'; btn.disabled = false; form.reset();
+      }, 800);
+    });
+
+    // --- AI Chat ---
+    const chatToggle = document.getElementById('chatToggle');
+    const chatBox = document.getElementById('chatBox');
+    const chatClose = document.getElementById('chatClose');
+    const chatMessages = document.getElementById('chatMessages');
+    const chatInput = document.getElementById('chatInput');
+    const chatSend = document.getElementById('chatSend');
+
+    const botReplies = [
+      "Great question! We offer website development, SEO, Google Ads, social media marketing, and AI-powered solutions.",
+      "Our pricing starts from ₹15,000 for a basic website. Contact us for a custom quote!",
+      "Absolutely! We specialize in school, healthcare, and gym websites with custom features.",
+      "We typically deliver projects within 2-4 weeks depending on scope.",
+      "Yes, we provide ongoing support and maintenance after launch.",
+      "Feel free to share your project details and we'll get back to you within 24 hours!"
+    ];
+
+    chatToggle.addEventListener('click', () => {
+      chatBox.classList.toggle('open');
+      if (chatBox.classList.contains('open')) chatInput.focus();
+    });
+    chatClose.addEventListener('click', () => chatBox.classList.remove('open'));
+
+    function addMessage(text, sender) {
+      const msg = document.createElement('div');
+      msg.className = 'msg ' + sender;
+      msg.textContent = text;
+      chatMessages.appendChild(msg);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function handleChat() {
+      const text = chatInput.value.trim();
+      if (!text) return;
+      addMessage(text, 'user');
+      chatInput.value = '';
+      setTimeout(() => {
+        const reply = botReplies[Math.floor(Math.random() * botReplies.length)];
+        addMessage(reply, 'bot');
+      }, 600 + Math.random() * 800);
+    }
+
+    chatSend.addEventListener('click', handleChat);
+    chatInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') handleChat(); });
+  </script>
+</body>
+</html>
