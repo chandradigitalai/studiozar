@@ -1,0 +1,122 @@
+=====================================================
+  HOW TO ADD OR UPDATE A BLOG POST  (StudioZar)
+=====================================================
+
+Your blog has 3 parts:
+  1. blog-template.html        <- the template you copy from
+  2. blog-XXXXX.html           <- each blog post is its own file
+  3. blog.html                 <- the list page that shows all posts
+
+
+-----------------------------------------------------
+  A) ADD A NEW BLOG POST  (follow these 6 steps)
+-----------------------------------------------------
+
+STEP 1 - Copy the template
+   Right-click blog-template.html -> Copy -> Paste.
+   Rename the copy. Use small letters and dashes, and start
+   with "blog-", for example:
+        blog-website-design-tips.html
+        blog-canva-content-ideas.html
+   (The filename becomes your web address, so use your main
+    keyword in it.)
+
+STEP 2 - Open the new file in Notepad (or VS Code) and edit
+   these lines in the <head> section:
+
+   <title>YOUR BLOG POST TITLE — StudioZar</title>
+        -> your real title, keep it 50-60 characters
+
+   <meta name="description" content="...">
+        -> 150-160 characters, this is what shows in Google
+
+   <link rel="canonical" href="https://studiozar.in/your-blog-post-filename.html" />
+        -> change to YOUR filename, must match exactly
+
+   og:title / og:description / twitter:title / twitter:description
+        -> same title and description as above
+
+   <meta name="keywords" content="...">
+        -> 5-8 keywords separated by commas
+
+STEP 3 - Edit the post body (search for these texts)
+   CATEGORY NAME          -> e.g. SEO, WEBSITE TIPS, CANVA TUTORIALS
+   Date: June 2026        -> today's date
+   Your Blog Post Title Goes Here  -> your H1 title
+   Then replace the placeholder paragraphs with your content.
+   Use   <h2>  for section headings
+         <h3>  for sub-headings
+         <p>   for paragraphs
+         <li>  for bullet points
+   Write 500-1000 words. Put your main keyword in the first
+   paragraph and in one H2.
+
+STEP 4 - Add a card on the blog list page (blog.html)
+   Find this block inside <div class="blog-grid"> :
+
+     <div class="blog-card reveal">
+     <div class="b-cat">CATEGORY</div>
+     <div class="b-date">DATE</div>
+     <h3><a href="#">TITLE</a></h3>
+     <p>Short 2 line description...</p>
+     <a href="#" class="b-link">Read More &#8594;</a>
+     </div>
+
+   Copy it, paste it ABOVE the other cards, then change:
+     b-cat, b-date, title, description, and BOTH href="#" 
+     into your filename: href="blog-your-topic.html"
+   (Put the newest post first so it appears top-left.)
+
+STEP 5 - Add the post to sitemap.xml
+   Add one line before </urlset>:
+
+   <url><loc>https://studiozar.in/blog-your-topic.html</loc><priority>0.7</priority></url>
+
+STEP 6 - Upload to hosting
+   Upload:  the new blog-XXXXX.html file
+            blog.html  (updated)
+            sitemap.xml (updated)
+   Then in Google Search Console -> Sitemaps -> Submit, or use
+   URL Inspection to request indexing for the new post.
+
+
+-----------------------------------------------------
+  B) UPDATE AN EXISTING BLOG POST
+-----------------------------------------------------
+   1. Open that post's file (e.g. blog-what-is-seo-audit.html)
+   2. Change the text you want
+   3. Save and upload JUST that file to hosting
+   (No need to touch blog.html unless you change the title
+    shown on the list page.)
+
+
+-----------------------------------------------------
+  C) SEO RULES FOR EVERY POST
+-----------------------------------------------------
+   - Filename = your main keyword (blog-seo-audit-tips.html)
+   - Only ONE <h1> per post (the title)
+   - Use <h2> for each section - include keywords naturally
+   - Link to your service/landing pages 2-3 times, e.g.
+        <a href="seo-services-tirupati.html">SEO services</a>
+        <a href="services.html">our pricing</a>
+     (this passes SEO value to the pages that earn money)
+   - Add a WhatsApp CTA box at the end (already in the template)
+   - Post consistently: 1-2 posts per week is enough
+   - Ideas that work locally:
+        "How much does a website cost in Tirupati"
+        "Why is my Google Business Profile not showing"
+        "School website features every school needs"
+        "Google Ads vs SEO - which is better for small business"
+
+
+-----------------------------------------------------
+  D) CURRENT FILES (for reference)
+-----------------------------------------------------
+   blog.html                          - list of all posts
+   blog-template.html                 - copy this for new posts
+   blog-what-is-seo-audit.html        - live post (Oct 2026)
+
+   A blog post typically appears at:
+   https://studiozar.in/blog-your-topic.html
+
+=====================================================
