@@ -1,0 +1,30 @@
+# StudioZar redirects (Cloudflare Pages)
+# Static redirects first, then dynamic (splat) redirects.
+
+# Legacy version files -> homepage (301 permanent)
+/version1.html / 301
+/version2.html / 301
+
+# Explicit .html -> clean extensionless URLs (301 permanent)
+/index.html / 301
+/services.html /services 301
+/contact.html /contact 301
+/agreement.html /agreement 301
+/website-development-tirupati.html /website-development-tirupati 301
+/digital-marketing-tirupati.html /digital-marketing-tirupati 301
+/seo-services-tirupati.html /seo-services-tirupati 301
+/school-website-design.html /school-website-design 301
+/small-business-website.html /small-business-website 301
+/blog.html /blog 301
+/blog-what-is-seo-audit.html /blog-what-is-seo-audit 301
+/profile.html /profile 301
+
+# Legacy version directories -> homepage (301 permanent)
+/version1/ / 301
+/version1/* / 301
+/version2/ / 301
+/version2/* / 301
+/version3/ / 301
+/version3/* / 301
+/version4/ / 301
+/version4/* / 301

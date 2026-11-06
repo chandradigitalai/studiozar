@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://studiozar.in/</loc><priority>1.0</priority></url>
-<url><loc>https://studiozar.in/services.html</loc><priority>0.9</priority></url>
-<url><loc>https://studiozar.in/contact.html</loc><priority>0.8</priority></url>
-<url><loc>https://studiozar.in/agreement.html</loc><priority>0.7</priority></url>
-<url><loc>https://studiozar.in/website-development-tirupati.html</loc><priority>0.8</priority></url>
-<url><loc>https://studiozar.in/digital-marketing-tirupati.html</loc><priority>0.8</priority></url>
-<url><loc>https://studiozar.in/seo-services-tirupati.html</loc><priority>0.9</priority></url>
-<url><loc>https://studiozar.in/school-website-design.html</loc><priority>0.8</priority></url>
-<url><loc>https://studiozar.in/small-business-website.html</loc><priority>0.8</priority></url>
-<url><loc>https://studiozar.in/blog.html</loc><priority>0.7</priority></url>
-<url><loc>https://studiozar.in/blog-what-is-seo-audit.html</loc><priority>0.7</priority></url>
+<url><loc>https://studiozar.in/</loc><lastmod>2026-11-06</lastmod><priority>1.0</priority></url>
+<url><loc>https://studiozar.in/services</loc><lastmod>2026-11-06</lastmod><priority>0.9</priority></url>
+<url><loc>https://studiozar.in/contact</loc><lastmod>2026-11-06</lastmod><priority>0.8</priority></url>
+<url><loc>https://studiozar.in/agreement</loc><lastmod>2026-11-06</lastmod><priority>0.7</priority></url>
+<url><loc>https://studiozar.in/website-development-tirupati</loc><lastmod>2026-11-06</lastmod><priority>0.8</priority></url>
+<url><loc>https://studiozar.in/digital-marketing-tirupati</loc><lastmod>2026-11-06</lastmod><priority>0.8</priority></url>
+<url><loc>https://studiozar.in/seo-services-tirupati</loc><lastmod>2026-11-06</lastmod><priority>0.9</priority></url>
+<url><loc>https://studiozar.in/school-website-design</loc><lastmod>2026-11-06</lastmod><priority>0.8</priority></url>
+<url><loc>https://studiozar.in/small-business-website</loc><lastmod>2026-11-06</lastmod><priority>0.8</priority></url>
+<url><loc>https://studiozar.in/blog</loc><lastmod>2026-11-06</lastmod><priority>0.7</priority></url>
+<url><loc>https://studiozar.in/blog-what-is-seo-audit</loc><lastmod>2026-11-06</lastmod><priority>0.7</priority></url>
+<url><loc>https://studiozar.in/profile</loc><lastmod>2026-11-06</lastmod><priority>0.6</priority></url>
 </urlset>

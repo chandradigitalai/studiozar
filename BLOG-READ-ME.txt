@@ -30,8 +30,8 @@ STEP 2 - Open the new file in Notepad (or VS Code) and edit
    <meta name="description" content="...">
         -> 150-160 characters, this is what shows in Google
 
-   <link rel="canonical" href="https://studiozar.in/your-blog-post-filename.html" />
-        -> change to YOUR filename, must match exactly
+   <link rel="canonical" href="https://studiozar.in/your-blog-post-filename" />
+        -> change to YOUR filename WITHOUT .html, must match exactly
 
    og:title / og:description / twitter:title / twitter:description
         -> same title and description as above
@@ -64,13 +64,14 @@ STEP 4 - Add a card on the blog list page (blog.html)
 
    Copy it, paste it ABOVE the other cards, then change:
      b-cat, b-date, title, description, and BOTH href="#" 
-     into your filename: href="blog-your-topic.html"
+     into your clean URL: href="/blog-your-topic"
+    (Keep the file named blog-your-topic.html, but link without .html.)
    (Put the newest post first so it appears top-left.)
 
 STEP 5 - Add the post to sitemap.xml
    Add one line before </urlset>:
 
-   <url><loc>https://studiozar.in/blog-your-topic.html</loc><priority>0.7</priority></url>
+   <url><loc>https://studiozar.in/blog-your-topic</loc><lastmod>2026-11-06</lastmod><priority>0.7</priority></url>
 
 STEP 6 - Upload to hosting
    Upload:  the new blog-XXXXX.html file
@@ -97,8 +98,8 @@ STEP 6 - Upload to hosting
    - Only ONE <h1> per post (the title)
    - Use <h2> for each section - include keywords naturally
    - Link to your service/landing pages 2-3 times, e.g.
-        <a href="seo-services-tirupati.html">SEO services</a>
-        <a href="services.html">our pricing</a>
+        <a href="/seo-services-tirupati">SEO services</a>
+        <a href="/services">our pricing</a>
      (this passes SEO value to the pages that earn money)
    - Add a WhatsApp CTA box at the end (already in the template)
    - Post consistently: 1-2 posts per week is enough
@@ -117,6 +118,6 @@ STEP 6 - Upload to hosting
    blog-what-is-seo-audit.html        - live post (Oct 2026)
 
    A blog post typically appears at:
-   https://studiozar.in/blog-your-topic.html
+   https://studiozar.in/blog-your-topic
 
 =====================================================

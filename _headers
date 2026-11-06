@@ -1,0 +1,12 @@
+# StudioZar response headers (Cloudflare Pages)
+
+# Keep the blog template and internal notes out of search results.
+# These headers apply only to these paths, so copies made from the template are unaffected.
+/blog-template
+  X-Robots-Tag: noindex, nofollow
+
+/blog-template.html
+  X-Robots-Tag: noindex, nofollow
+
+/BLOG-READ-ME.txt
+  X-Robots-Tag: noindex, nofollow
